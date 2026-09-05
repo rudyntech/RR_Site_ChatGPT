@@ -1,0 +1,6 @@
+# For Cloudflare Pages subdomain routing
+about.roadratings.com/* /about/index.html 200
+map.roadratings.com/* /map/index.html 200
+data.roadratings.com/* /data/index.html 200
+pitch.roadratings.com/* /pitch/index.html 200
+home.roadratings.com/* /index.html 200
