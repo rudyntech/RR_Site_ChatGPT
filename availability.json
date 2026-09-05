@@ -22,6 +22,6 @@
   "about": {
     "label": "About",
     "url": "https://about.roadratings.com",
-    "available": false
+    "available": true
   }
 }
