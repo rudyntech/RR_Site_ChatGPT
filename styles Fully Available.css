@@ -131,15 +131,15 @@ body {
   letter-spacing: -0.015em;
 }
 
-a.quadrant:hover {
+.quadrant:hover {
   background: #0b0a05;
 }
 
-a.quadrant:hover .quadrant__content {
+.quadrant:hover .quadrant__content {
   transform: translateY(var(--content-y)) scale(1.015);
 }
 
-a.quadrant:focus-visible {
+.quadrant:focus-visible {
   outline: 3px solid var(--road-yellow);
   outline-offset: -7px;
   background: #0b0a05;
@@ -191,30 +191,4 @@ a.quadrant:focus-visible {
   .center-logo {
     transition: none;
   }
-}
-
-/* Unavailable destinations retain their labels beneath a muted overlay. */
-.quadrant--unavailable {
-  cursor: default;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.quadrant--unavailable .quadrant__title,
-.quadrant--unavailable .quadrant__subtitle {
-  opacity: 0.38;
-}
-
-.quadrant__status {
-  display: block;
-  margin-top: clamp(10px, 2.6dvh, 28px);
-  padding: clamp(6px, 1.3dvh, 13px) clamp(10px, 1.5vw, 24px);
-  border: 1px solid #ffe078;
-  border-radius: 5px;
-  background: var(--road-yellow);
-  color: var(--road-black);
-  font-size: clamp(11px, min(2.1vw, 3.2dvh), 28px);
-  font-weight: 900;
-  line-height: 1.15;
-  white-space: nowrap;
-  text-transform: uppercase;
 }
