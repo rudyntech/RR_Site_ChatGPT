@@ -1,0 +1,194 @@
+:root {
+  --road-yellow: #ffd241;
+  --road-black: #010101;
+  --divider-size: clamp(3px, 0.8vw, 5px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--road-black);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--road-yellow);
+}
+
+.landing {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--road-black);
+}
+
+/* Divider lines sit above the quadrants and directly behind the center logo. */
+.landing::before,
+.landing::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  background: var(--road-yellow);
+}
+
+.landing::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--divider-size);
+  transform: translateY(-50%);
+}
+
+.landing::after {
+  top: 0;
+  left: 50%;
+  width: var(--divider-size);
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.quadrant {
+  --content-y: 0px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--road-yellow);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  background: var(--road-black);
+  -webkit-tap-highlight-color: rgba(255, 210, 65, 0.12);
+  transition: background-color 140ms ease;
+}
+
+/* Small offsets reproduce the supplied reference's intentionally low-set labels. */
+.quadrant--map {
+  --content-y: clamp(4px, 1.4dvh, 8px);
+}
+
+.quadrant--data,
+.quadrant--pitch {
+  --content-y: clamp(8px, 3.3dvh, 16px);
+}
+
+.quadrant--about {
+  --content-y: clamp(9px, 3.55dvh, 17px);
+}
+
+.quadrant__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.2rem, 1vw, 0.5rem);
+  max-width: 92%;
+  transform: translateY(var(--content-y));
+  transition: transform 140ms ease;
+}
+
+.quadrant__title,
+.quadrant__subtitle {
+  display: block;
+  white-space: nowrap;
+  font-weight: 900;
+}
+
+.quadrant__title {
+  font-size: clamp(2rem, min(10.1vw, 15dvh), 8rem);
+  line-height: 0.88;
+  letter-spacing: 0;
+}
+
+/* The reference's About label is fractionally wider than the shared type metrics. */
+.quadrant--about .quadrant__title {
+  transform: scaleX(1.04);
+}
+
+.quadrant__subtitle {
+  font-size: clamp(0.68rem, min(2.7vw, 4.1dvh), 2rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.quadrant:hover {
+  background: #0b0a05;
+}
+
+.quadrant:hover .quadrant__content {
+  transform: translateY(var(--content-y)) scale(1.015);
+}
+
+.quadrant:focus-visible {
+  outline: 3px solid var(--road-yellow);
+  outline-offset: -7px;
+  background: #0b0a05;
+}
+
+.center-logo {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: clamp(96px, min(25.2vw, 38dvh), 400px);
+  line-height: 0;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 140ms ease;
+}
+
+.center-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.center-logo:hover {
+  transform: translate(-50%, -50%) scale(1.025);
+}
+
+.center-logo:focus-visible {
+  outline: 3px solid var(--road-yellow);
+  outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+  .center-logo {
+    width: clamp(110px, 32vw, 150px);
+  }
+}
+
+@media (max-width: 420px) {
+  .quadrant__subtitle {
+    max-width: 44vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quadrant,
+  .quadrant__content,
+  .center-logo {
+    transition: none;
+  }
+}
