@@ -58,3 +58,7 @@ Then open `http://localhost:8000`.
 The live `index.html` shows Coming Soon badges for Map, Pitch, and About. Those destinations are non-interactive until launch. Data and the center home logo retain their links.
 
 The original design is saved as `index Fully Available.html` with its unchanged stylesheet `styles Fully Available.css`. Both designs use the same original logo asset. To restore the original as the live page, copy these two saved files over `index.html` and `styles.css`, then change the restored HTML stylesheet reference back to `styles.css`.
+
+## About and shared navigation
+
+The project now includes /about/ with three collapsible sections, editable copy and photos, and shared availability states. See [EDITING.md](EDITING.md) for content updates, future-page integration and About subdomain setup. About stays Coming Soon until its subdomain is verified and enabled in availability.json. This supersedes the earlier no-JavaScript description: the site now uses small dependency-free scripts and one Cloudflare Pages routing function.

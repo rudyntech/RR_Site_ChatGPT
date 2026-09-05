@@ -1,0 +1,27 @@
+{
+  "home": {
+    "label": "Home",
+    "url": "https://home.roadratings.com",
+    "available": true
+  },
+  "map": {
+    "label": "Map",
+    "url": "https://map.roadratings.com",
+    "available": false
+  },
+  "data": {
+    "label": "Data",
+    "url": "https://data.roadratings.com",
+    "available": true
+  },
+  "pitch": {
+    "label": "Pitch",
+    "url": "https://pitch.roadratings.com",
+    "available": false
+  },
+  "about": {
+    "label": "About",
+    "url": "https://about.roadratings.com",
+    "available": false
+  }
+}

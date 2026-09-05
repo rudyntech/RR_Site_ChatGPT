@@ -131,11 +131,11 @@ body {
   letter-spacing: -0.015em;
 }
 
-a.quadrant:hover {
+a.quadrant:not(.is-unavailable):hover {
   background: #0b0a05;
 }
 
-a.quadrant:hover .quadrant__content {
+a.quadrant:not(.is-unavailable):hover .quadrant__content {
   transform: translateY(var(--content-y)) scale(1.015);
 }
 
@@ -164,7 +164,7 @@ a.quadrant:focus-visible {
   height: auto;
 }
 
-.center-logo:hover {
+.center-logo:not(.is-unavailable):hover {
   transform: translate(-50%, -50%) scale(1.025);
 }
 

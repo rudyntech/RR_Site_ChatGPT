@@ -2,4 +2,9 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://home.roadratings.com; connect-src 'self' https://home.roadratings.com; img-src 'self' data: https://images.pexels.com; style-src 'self' https://home.roadratings.com; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
+/availability.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-store
+/about/content.json
+  Cache-Control: no-cache

@@ -8,42 +8,46 @@
   <title>RoadRatings | Find Great Riding Roads</title>
   <link rel="icon" type="image/png" href="assets/RoadRatings-Logo.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shared/navigation.css">
+  <script src="shared/navigation.js" defer></script>
 </head>
 <body>
   <main class="landing" aria-label="RoadRatings navigation">
-    <div class="quadrant quadrant--map quadrant--unavailable" role="group" aria-disabled="true">
+    <a class="quadrant quadrant--map is-unavailable" data-page="map" aria-disabled="true">
       <span class="quadrant__content">
-        <span class="quadrant__title">Map</span>
-        <span class="quadrant__subtitle">The App</span>
-        <span class="quadrant__status">Coming Soon</span>
-      </span>
-    </div>
-
-    <a class="quadrant quadrant--data" href="https://data.roadratings.com" aria-label="Data — The Spreadsheet">
-      <span class="quadrant__content">
-        <span class="quadrant__title">Data</span>
-        <span class="quadrant__subtitle">The Spreadsheet</span>
+        <span class="quadrant__title page-label">Map</span>
+        <span class="quadrant__subtitle page-label">The App</span>
+        <span class="quadrant__status availability-badge">Coming Soon</span>
       </span>
     </a>
 
-    <div class="quadrant quadrant--pitch quadrant--unavailable" role="group" aria-disabled="true">
+    <a class="quadrant quadrant--data is-unavailable" data-page="data" aria-label="Data — The Spreadsheet">
       <span class="quadrant__content">
-        <span class="quadrant__title">Pitch</span>
-        <span class="quadrant__subtitle">The Plea</span>
-        <span class="quadrant__status">Coming Soon</span>
+        <span class="quadrant__title page-label">Data</span>
+        <span class="quadrant__subtitle page-label">The Spreadsheet</span>
+        <span class="quadrant__status availability-badge">Coming Soon</span>
       </span>
-    </div>
+    </a>
 
-    <div class="quadrant quadrant--about quadrant--unavailable" role="group" aria-disabled="true">
+    <a class="quadrant quadrant--pitch is-unavailable" data-page="pitch" aria-disabled="true">
       <span class="quadrant__content">
-        <span class="quadrant__title">About</span>
-        <span class="quadrant__subtitle">The Story</span>
-        <span class="quadrant__status">Coming Soon</span>
+        <span class="quadrant__title page-label">Pitch</span>
+        <span class="quadrant__subtitle page-label">The Plea</span>
+        <span class="quadrant__status availability-badge">Coming Soon</span>
       </span>
-    </div>
+    </a>
 
-    <a class="center-logo" href="https://home.roadratings.com" aria-label="RoadRatings home">
-      <img src="assets/RoadRatings-Logo.png" alt="RoadRatings winding road diamond logo" width="790" height="792">
+    <a class="quadrant quadrant--about is-unavailable" data-page="about" aria-disabled="true">
+      <span class="quadrant__content">
+        <span class="quadrant__title page-label">About</span>
+        <span class="quadrant__subtitle page-label">The Story</span>
+        <span class="quadrant__status availability-badge">Coming Soon</span>
+      </span>
+    </a>
+
+    <a class="center-logo brand-logo is-unavailable" data-page="home" aria-label="RoadRatings home">
+      <img class="page-picture" src="assets/RoadRatings-Logo.png" alt="RoadRatings winding road diamond logo" width="790" height="792">
+      <span class="availability-badge">Coming Soon</span>
     </a>
   </main>
 </body>

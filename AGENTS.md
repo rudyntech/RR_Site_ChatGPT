@@ -1,0 +1,5 @@
+# RoadRatings project rules
+
+Use availability.json as the only source of destination URLs and availability. Production pages on every RoadRatings subdomain must read https://home.roadratings.com/availability.json; do not create per-page availability copies. Include shared/navigation.css and shared/navigation.js, mark ALL internal destination links with data-page, and include page-label (or page-picture) plus availability-badge children. Start unavailable until settings load, and disable unavailable navigation. Unknown destinations fail closed. Maintain both available and Coming Soon states for every new navigation component. Test both states.
+
+Keep the original logo byte-for-byte. Preserve index Fully Available.html and styles Fully Available.css as a historical snapshot, not a live navigation template. About copy and photos belong in about/content.json. Keep the plain static architecture, native details/summary accordions, and no build step. About availability remains false until its subdomain is connected and verified, then set it true centrally.

@@ -1,0 +1,84 @@
+{
+  "sections": [
+    {
+      "id": "summary",
+      "title": "Summary",
+      "open": true,
+      "paragraphs": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui.",
+        "Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod."
+      ],
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/18781920/pexels-photo-18781920.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "alt": "Winding mountain road viewed from above",
+          "caption": "Placeholder image · Jordi De smedt / Pexels",
+          "source": "https://www.pexels.com/photo/aerial-footage-of-a-winding-road-18781920/"
+        },
+        {
+          "src": "https://images.pexels.com/photos/32785410/pexels-photo-32785410.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "alt": "Helmeted motorcyclist riding on a winding road",
+          "caption": "Placeholder image · Tiwi Riders / Pexels",
+          "source": "https://www.pexels.com/photo/motorcyclist-leaning-on-curved-road-outdoors-32785410/"
+        }
+      ]
+    },
+    {
+      "id": "deep-dive",
+      "title": "Deep Dive",
+      "open": true,
+      "paragraphs": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui.",
+        "Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.",
+        "Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper.",
+        "Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.",
+        "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+        "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui.",
+        "Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.",
+        "Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper.",
+        "Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.",
+        "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+        "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula."
+      ],
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/20149517/pexels-photo-20149517.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "alt": "Aerial view of a mountain road",
+          "caption": "Placeholder image · Carlos Mazorra / Pexels",
+          "source": "https://www.pexels.com/photo/drone-shot-of-a-winding-road-in-mountains-20149517/"
+        },
+        {
+          "src": "https://images.pexels.com/photos/32355970/pexels-photo-32355970.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "alt": "Motorcyclist following a curved road",
+          "caption": "Placeholder image · Tiwi Riders / Pexels",
+          "source": "https://www.pexels.com/photo/man-riding-motorcycle-on-a-curved-road-32355970/"
+        }
+      ]
+    },
+    {
+      "id": "who-is-rudy",
+      "title": "Who Is Rudy",
+      "open": true,
+      "paragraphs": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui.",
+        "Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.",
+        "Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
+      ],
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/25712875/pexels-photo-25712875.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "alt": "Anonymous helmeted motorcyclist on an asphalt road",
+          "caption": "Placeholder image · Tiwi Riders / Pexels",
+          "source": "https://www.pexels.com/photo/motorcyclist-with-helmet-on-motorcycle-on-asphalt-road-25712875/"
+        },
+        {
+          "src": "https://images.pexels.com/photos/17354174/pexels-photo-17354174.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "alt": "Winding road on a mountainside",
+          "caption": "Placeholder image · Elia Vigolo / Pexels",
+          "source": "https://www.pexels.com/photo/winding-road-on-the-mountainside-17354174/"
+        }
+      ]
+    }
+  ]
+}

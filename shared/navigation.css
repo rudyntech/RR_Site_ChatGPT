@@ -1,0 +1,7 @@
+[hidden] { display: none !important; }
+[data-page].is-unavailable { cursor: default; }
+.is-unavailable .page-label, .is-unavailable .page-picture { opacity: .38; }
+.availability-badge { display: inline-block; color: #010101; background: #ffd241; border: 1px solid #ffe078; border-radius: 4px; padding: .45em .7em; font: 900 .7rem/1.15 Arial, sans-serif; text-transform: uppercase; white-space: nowrap; }
+a[data-page]:focus-visible { outline: 3px solid #ffd241; outline-offset: 5px; }
+.brand-logo { position: relative; }
+.brand-logo .availability-badge { position: absolute; left: 50%; top: 55%; transform: translate(-50%,-50%); }
