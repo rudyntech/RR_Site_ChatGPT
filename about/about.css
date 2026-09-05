@@ -3,7 +3,7 @@
 body { margin:0; background:#010101; color:#eae7dd; font:17px/1.75 Arial,Helvetica,sans-serif; }
 .site-header { margin:0 auto; width:calc(100% - 64px); max-width:1440px; min-height:180px; display:flex; align-items:center; justify-content:space-between; gap:40px; border-bottom:1px solid var(--yellow); padding:20px 0; }
 .brand { display:flex; align-items:center; gap:clamp(28px,4vw,64px); }
-.brand-logo { display:block; flex:none; width:clamp(80px,9vw,132px); line-height:0; }
+.brand-logo { position:relative; display:block; flex:none; width:clamp(80px,9vw,132px); line-height:0; }
 .brand-logo img { display:block; width:100%; height:auto; }
 h1 { color:var(--yellow); font-size:clamp(48px,6vw,88px); letter-spacing:-.025em; line-height:1; margin:0; font-weight:900; }
 nav { display:flex; gap:clamp(18px,3vw,48px); align-items:flex-start; }
