@@ -61,4 +61,4 @@ The original design is saved as `index Fully Available.html` with its unchanged 
 
 ## About and shared navigation
 
-The project now includes /about/ with three collapsible sections, editable copy and photos, and shared availability states. See [EDITING.md](EDITING.md) for content updates, future-page integration and About subdomain setup. About stays Coming Soon until its subdomain is verified and enabled in availability.json. This supersedes the earlier no-JavaScript description: the site now uses small dependency-free scripts and one Cloudflare Pages routing function.
+The project now includes /about/ with three collapsible sections, editable copy and photos, and shared availability states. See [EDITING.md](EDITING.md) for content updates, future-page integration and About subdomain setup. About is enabled in availability.json; Map and Pitch remain Coming Soon. This supersedes the earlier no-JavaScript description: the site now uses small dependency-free scripts and one Cloudflare Pages routing function.

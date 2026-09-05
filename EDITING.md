@@ -17,7 +17,7 @@ You can also send revised copy and photos to Codex and ask it to update the rele
 
 Edit availability.json in this repository. Change available to true or false under the page name, then commit. URLs and labels are also stored there. All production RoadRatings pages load the one file at https://home.roadratings.com/availability.json, without a cached fallback; open pages refresh every minute and when returning to the tab. Failed settings requests disable navigation until a successful retry.
 
-Home and Data are enabled. Map, Pitch and About remain disabled until launch. About itself can still be previewed directly at /about/; navigation availability is not access control.
+Home, Data and About are enabled. Map and Pitch remain disabled until launch. About itself can still be previewed directly at /about/; navigation availability is not access control.
 
 ## Launch About on its subdomain
 
