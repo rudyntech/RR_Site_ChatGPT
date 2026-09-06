@@ -7,7 +7,7 @@
     const content=await response.json();
     const fragment=document.createDocumentFragment();
     content.sections.forEach((section,index)=>{
-      const details=element('details',null,section.id); details.id=section.id; details.open=section.open !== false;
+      const details=element('details',null,section.id); details.id=section.id; details.open=section.open === true;
       const summary=element('summary'); summary.append(element('span',String(index+1).padStart(2,'0'),'number'),element('h2',section.title));
       const body=element('div',null,'section-content'); const copy=element('div',null,'copy');
       section.paragraphs.forEach(text=>copy.append(element('p',text)));

@@ -34,3 +34,9 @@ figcaption { font-size:12px; text-align:center; margin-top:6px; color:#ccc6b5; }
 .notice { margin:40px; }
 @media(max-width:800px) { .site-header { flex-wrap:wrap; gap:22px; width:calc(100% - 32px); } nav { width:100%; justify-content:space-between; gap:8px; } main { width:calc(100% - 40px); } .section-content,.deep-dive .section-content { grid-template-columns:1fr; gap:20px; } .deep-dive .pictures { grid-template-columns:1fr 1fr; } .nav-link { font-size:17px; min-width:0; } .nav-link .availability-badge { font-size:10px; } details { padding:30px 0; } }
 @media(max-width:380px) { summary { gap:12px; } .pictures { gap:10px; } }
+
+/* Article content must remain scrollable. */
+html { height: auto; min-height: 100%; overflow-y: auto; }
+body.about-page { height: auto; min-height: 100vh; overflow: visible; }
+.site-header .brand { flex-shrink: 0; }
+.site-header .page-title { display: block; flex-shrink: 0; }
