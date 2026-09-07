@@ -2,6 +2,17 @@
 
 ## Easiest way to edit text and pictures
 
+Use https://app.pagescms.org and sign in with your rudyntech GitHub account. Open RR_Site_ChatGPT and select main. The repository's .pages.yml configures these forms:
+
+1. About page: expand Summary, Deep Dive or Who Is Rudy. Edit the title or individual paragraph fields. Text is plain text, not Markdown or HTML.
+2. Pictures: expand either picture, select/upload a JPG, JPEG, PNG or WebP, and edit its description, caption and credit. Uploads go into assets/about; the original logo is outside this media folder. Use a new filename when replacing a photo to avoid old browser caches. Existing external placeholders can remain until replaced.
+3. Page availability and links: change destination addresses or turn availability on/off. Off displays COMING SOON; it does not make the destination private. Home, Data and About currently remain on; Map and Pitch remain off until their launches.
+4. Save your changes. Saving on main commits to GitHub and triggers Cloudflare publication. This configuration has no separate draft approval or pre-publication preview. Wait for deployment, then refresh the public page to check your edit.
+
+The page keeps three sections, two pictures per section, and starts all sections collapsed. Preview routing settings and section IDs are retained as hidden fields. If a Pages CMS screen asks you to create configuration, refresh/reopen the repository after .pages.yml has been pushed; do not replace it with a starter template.
+
+## Alternative: edit on GitHub
+
 On GitHub, open about/content.json and click the pencil (Edit). All About content lives here; the layout is separate.
 
 - Each section has a title, a paragraphs list, and an images list.

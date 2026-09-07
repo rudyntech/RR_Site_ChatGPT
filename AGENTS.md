@@ -1,5 +1,7 @@
 # RoadRatings project rules
 
+Pages CMS is configured in .pages.yml for about/content.json and availability.json. Keep its schema in sync with those files. Preserve hidden section IDs, collapsed defaults and preview settings on CMS saves. Image uploads belong only in assets/about, outside the original logo. Main-branch CMS saves publish through Cloudflare; do not promise draft previews. The user has confirmed the apex landing page, About and Home/WWW redirects work; the previous apex stopgap has been superseded by launch.
+
 Always include concrete, actionable next steps in responses unless the user explicitly asks for information only. Connect supporting tasks back to the ongoing project goal. If the work is fully complete, state that no further action is required rather than inventing work. This preference is stored locally; do not claim account-wide memory was updated.
 
 For every terminal Git push, explicitly select the intended GitHub credentials. The user has multiple accounts and GitHub Desktop may be signed into a different account. For this repository (rudyntech/RR_Site_ChatGPT), use `git -c credential.username=rudyntech push origin main` from the repository, or include `-C` with its path. Confirm the destination remote before pushing. For other repositories, establish and explicitly select the appropriate account; never assume the Desktop account applies. Never include passwords or tokens in commands.

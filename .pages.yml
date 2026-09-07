@@ -1,0 +1,142 @@
+media:
+  input: assets/about
+  output: /assets/about
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+
+components:
+  destination:
+    type: object
+    fields:
+      - name: label
+        label: Navigation label
+        type: string
+        required: true
+      - name: url
+        label: Destination address
+        type: string
+        required: true
+        pattern:
+          regex: '^https://[^\s]+$'
+          message: Enter a full address beginning with https://
+      - name: available
+        label: Available on the live site
+        type: boolean
+        description: Turn off to show COMING SOON and disable links to this page. This does not take the destination offline.
+
+content:
+  - name: about
+    label: About page
+    type: file
+    path: about/content.json
+    format: json
+    fields:
+      - name: sections
+        label: Page sections
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+          - name: id
+            type: string
+            hidden: true
+          - name: title
+            label: Section title
+            type: string
+            required: true
+          - name: open
+            type: boolean
+            hidden: true
+          - name: paragraphs
+            label: Paragraphs
+            type: text
+            description: Write plain text, one paragraph per item. Add or reorder paragraphs as needed.
+            list:
+              min: 1
+          - name: images
+            label: Pictures
+            type: object
+            list:
+              min: 2
+              max: 2
+              collapsible:
+                collapsed: true
+                summary: 'Picture {index}: {fields.alt}'
+            fields:
+              - name: src
+                label: Picture
+                type: image
+                required: true
+              - name: alt
+                label: Picture description
+                type: string
+                required: true
+                description: Briefly describe the picture for people using screen readers.
+              - name: caption
+                label: Caption
+                type: text
+                description: Shown below the picture. Leave blank for no caption.
+              - name: source
+                label: Photo credit or source link
+                type: string
+                description: For your records only. Put credits in the caption to display them publicly.
+  - name: availability
+    label: Page availability and links
+    type: file
+    path: availability.json
+    format: json
+    fields:
+      - name: home
+        label: Home
+        type: object
+        fields:
+          - name: label
+            label: Navigation label
+            type: string
+            required: true
+          - name: url
+            label: Destination address
+            type: string
+            required: true
+            pattern: '^https://[^\s]+$'
+          - name: available
+            label: Available on the live site
+            type: boolean
+          - name: previewPath
+            type: string
+            hidden: true
+      - name: map
+        label: Map
+        component: destination
+      - name: data
+        label: Data
+        component: destination
+      - name: pitch
+        label: Pitch
+        component: destination
+      - name: about
+        label: About
+        type: object
+        fields:
+          - name: label
+            label: Navigation label
+            type: string
+            required: true
+          - name: url
+            label: Destination address
+            type: string
+            required: true
+            pattern: '^https://[^\s]+$'
+          - name: available
+            label: Available on the live site
+            type: boolean
+          - name: previewPath
+            type: string
+            hidden: true
+          - name: previewAvailable
+            type: boolean
+            hidden: true
