@@ -1,5 +1,7 @@
 # RoadRatings project rules
 
+Rudy's bike table is edited in about/bikes.json via Pages CMS. Bike photos belong in about/bikes (the user explicitly requested this folder), while other About photos remain in assets/about. Store bikes in purchase order; render down columns first. Preserve stock-image attribution and license links until replacing the relevant photo. About paragraphs use CMS HTML rich text; render only allowed formatting through about/rich-text.js, never raw HTML. Keep original user photo bytes and logo intact.
+
 Pages CMS is configured in .pages.yml for about/content.json and availability.json. Keep its schema in sync with those files. Preserve hidden section IDs, collapsed defaults and preview settings on CMS saves. Image uploads belong only in assets/about, outside the original logo. Main-branch CMS saves publish through Cloudflare; do not promise draft previews. The user has confirmed the apex landing page, About and Home/WWW redirects work; the previous apex stopgap has been superseded by launch.
 
 Always include concrete, actionable next steps in responses unless the user explicitly asks for information only. Connect supporting tasks back to the ongoing project goal. If the work is fully complete, state that no further action is required rather than inventing work. This preference is stored locally; do not claim account-wide memory was updated.

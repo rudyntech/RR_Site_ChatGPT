@@ -1,0 +1,194 @@
+{
+  "title": "Bikes owned, in chronological order of purchase, read down columns first:",
+  "bikes": [
+    {
+      "name": "2008 Ninja 250",
+      "image": "/about/bikes/2009-kawasaki-ninja-250r.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2008 ZX6R",
+      "image": "/about/bikes/2008-ninja-zx-6r.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "1990 KDX200",
+      "image": "/about/bikes/1990-kawasaki-kdx200.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2008 Hyosung GT250R",
+      "image": "/about/bikes/2008-hyosung-gt250r.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2008 KLR650",
+      "image": "/about/bikes/2008-kawasaki-klr650.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2007 GS500F",
+      "image": "/about/bikes/2007-suzuki-gs500f.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2002 SV650",
+      "image": "/about/bikes/2002-suzuki-sv650n.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2008 KTM 450 EXC-R",
+      "image": "/about/bikes/2008-ktm-450exc-r.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2003 SV1000S",
+      "image": "/about/bikes/2003-suzuki-sv1000s.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2008 Buell 1125CR",
+      "image": "/about/bikes/2009-buell-1125cr.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2008 V-Strom 650",
+      "image": "/about/bikes/2008-suzuki-dl650.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2005 SV650 (race)",
+      "image": "/about/bikes/2005-suzuki-sv650-race-bike.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2013 RC8R",
+      "image": "/about/bikes/2013-ktm-rc8r.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2007 V-Strom 650A",
+      "image": "/about/bikes/2007-suzuki-dl650a.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2001 TL1000R",
+      "image": "/about/bikes/2001-suzuki-tl1000r.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "1999 VFR800",
+      "image": "/about/bikes/1999-honda-vfr800fi.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2014 EBR 1190RX",
+      "image": "/about/bikes/2014-ebr-1190rx.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2007 R4.5 (race)",
+      "image": "/about/bikes/2007-yamaha-r4.5-triple-cripple-race-bike.jpg",
+      "note": "",
+      "credit": "",
+      "source": "",
+      "license": "",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2003 Buell XB9S",
+      "image": "/about/bikes/stock-buell-xb9s.jpg",
+      "note": "Placeholder: 2003 Buell XB9S.",
+      "credit": "StealthFX",
+      "source": "https://commons.wikimedia.org/wiki/File:Buell_Lightning_XB9S_Stealth.jpg",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "name": "2004 Multistrada 1000DS",
+      "image": "/about/bikes/stock-ducati-multistrada-1000.jpg",
+      "note": "Placeholder: Ducati Multistrada 1000; photo model year unverified.",
+      "credit": "Wbaas123",
+      "source": "https://commons.wikimedia.org/wiki/File:Ducati_multistrada_1000.JPG",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "name": "2006 R4.5 (race)",
+      "image": "/about/bikes/stock-2006-yamaha-r6.jpg",
+      "note": "Placeholder: 2006 Yamaha YZF-R6, not Rudy’s race bike.",
+      "credit": "Rritterson",
+      "source": "https://commons.wikimedia.org/wiki/File:Blue_2006_YZFR6.jpg",
+      "license": "Public domain",
+      "licenseUrl": ""
+    }
+  ]
+}

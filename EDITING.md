@@ -4,12 +4,18 @@
 
 Use https://app.pagescms.org and sign in with your rudyntech GitHub account. Open RR_Site_ChatGPT and select main. The repository's .pages.yml configures these forms:
 
-1. About page: expand Summary, Deep Dive or Who Is Rudy. Edit the title or individual paragraph fields. Text is plain text, not Markdown or HTML.
+1. About page: expand Summary, Deep Dive or Who Is Rudy. Edit the title or individual paragraph fields. Paragraphs now have a visual formatting toolbar: select text and use Bold or Italic, or add lists. Formatting is saved automatically; you do not need to edit HTML. Embedded images and executable content are not supported in paragraph fields; use the picture controls instead.
 2. Pictures: expand either picture, select/upload a JPG, JPEG, PNG or WebP, and edit its description, caption and credit. Uploads go into assets/about; the original logo is outside this media folder. Use a new filename when replacing a photo to avoid old browser caches. Existing external placeholders can remain until replaced.
 3. Page availability and links: change destination addresses or turn availability on/off. Off displays COMING SOON; it does not make the destination private. Home, Data and About currently remain on; Map and Pitch remain off until their launches.
 4. Save your changes. Saving on main commits to GitHub and triggers Cloudflare publication. This configuration has no separate draft approval or pre-publication preview. Wait for deployment, then refresh the public page to check your edit.
 
 The page keeps three sections, two pictures per section, and starts all sections collapsed. Preview routing settings and section IDs are retained as hidden fields. If a Pages CMS screen asks you to create configuration, refresh/reopen the repository after .pages.yml has been pushed; do not replace it with a starter template.
+
+## Rudy's bike table
+
+Open Rudy's bikes in Pages CMS. Edit the heading, bike names, pictures and photo credits. The list is chronological: the website fills the first column downward, then the second, then the third. Clicking a bike opens its picture; Close, Escape or clicking outside dismisses it. Photos are stored together in about/bikes. The extra EBR photo from Drive is available in Bike pictures as an alternative.
+
+Three images are stock placeholders (Buell XB9S, Ducati Multistrada 1000, and Yamaha R6 for the 2006 R4.5). Keep the credit, source and license fields while using them. When uploading your own replacement, update or clear those fields and the placeholder note. The Ducati photo's model year is unverified; the other two placeholders are documented as 2003 XB9S and 2006 R6. Table names stay exactly as supplied by Rudy, even where Drive photo filenames have a different year.
 
 ## Alternative: edit on GitHub
 

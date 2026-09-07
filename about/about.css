@@ -40,3 +40,26 @@ html { height: auto; min-height: 100%; overflow-y: auto; }
 body.about-page { height: auto; min-height: 100vh; overflow: visible; }
 .site-header .brand { flex-shrink: 0; }
 .site-header .page-title { display: block; flex-shrink: 0; }
+
+.bike-history { margin-top:36px; }
+.bike-table { width:100%; table-layout:fixed; border-collapse:collapse; }
+.bike-table caption { color:var(--yellow); text-align:left; font-size:20px; font-weight:700; padding-bottom:16px; }
+.bike-table td { border:1px solid #65521b; padding:14px 16px; vertical-align:middle; overflow-wrap:anywhere; }
+.bike-table a { color:var(--yellow); text-decoration:underline; text-underline-offset:4px; display:block; }
+.bike-table a:hover { color:#fff0a9; }
+.bike-table a:focus-visible,.bike-close:focus-visible { outline:3px solid var(--yellow); outline-offset:4px; }
+.bike-dialog { width:min(1100px,94vw); max-height:92dvh; padding:20px; border:1px solid var(--yellow); background:#10100d; color:#eae7dd; overflow:auto; }
+.bike-dialog::backdrop { background:rgb(0 0 0 / .85); }
+.bike-dialog h3 { color:var(--yellow); margin:0 120px 16px 0; line-height:1.4; }
+.bike-dialog img { display:block; width:100%; height:auto; max-height:72dvh; object-fit:contain; }
+.bike-close { float:right; border:0; padding:10px 14px; background:var(--yellow); color:#010101; font-weight:700; cursor:pointer; }
+body.about-page.photo-open { overflow:hidden; }
+.bike-photo-status { margin:12px 0 0; }
+.bike-credit { font-size:13px; margin:12px 0 0; }
+.bike-credit a { color:var(--yellow); }
+.rich-paragraph { margin:0 0 1.2em; }
+.rich-paragraph > :last-child { margin-bottom:0; }
+.rich-paragraph strong,.rich-paragraph b { font-weight:700; color:#fff; }
+.rich-paragraph blockquote { border-left:3px solid var(--yellow); padding-left:18px; margin-left:0; }
+.rich-paragraph pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+@media(max-width:600px) { .bike-table td { padding:12px 8px; font-size:14px; line-height:1.5; } .bike-table caption { font-size:18px; } .bike-dialog { padding:14px; } }

@@ -1,8 +1,16 @@
 media:
-  input: assets/about
-  output: /assets/about
-  extensions: [jpg, jpeg, png, webp]
-  rename: safe
+  - name: about-pictures
+    label: About pictures
+    input: assets/about
+    output: /assets/about
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: bike-pictures
+    label: Bike pictures
+    input: about/bikes
+    output: /about/bikes
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
 
 components:
   destination:
@@ -53,8 +61,12 @@ content:
             hidden: true
           - name: paragraphs
             label: Paragraphs
-            type: text
-            description: Write plain text, one paragraph per item. Add or reorder paragraphs as needed.
+            type: rich-text
+            description: Select text and use the toolbar for bold, italics, lists and other formatting. Add or reorder items as needed.
+            options:
+              format: html
+              media: false
+              switcher: false
             list:
               min: 1
           - name: images
@@ -70,6 +82,8 @@ content:
               - name: src
                 label: Picture
                 type: image
+                options:
+                  media: about-pictures
                 required: true
               - name: alt
                 label: Picture description
@@ -84,6 +98,50 @@ content:
                 label: Photo credit or source link
                 type: string
                 description: For your records only. Put credits in the caption to display them publicly.
+  - name: bikes
+    label: Rudy's bikes
+    type: file
+    path: about/bikes.json
+    format: json
+    fields:
+      - name: title
+        label: Table heading
+        type: text
+        required: true
+      - name: bikes
+        label: Bikes in purchase order
+        description: Enter bikes chronologically. The website displays them down the first column, then the second, then the third.
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: '{fields.name}'
+        fields:
+          - name: name
+            label: Bike name
+            type: string
+            required: true
+          - name: image
+            label: Bike picture
+            type: image
+            options:
+              media: bike-pictures
+          - name: note
+            label: Photo note
+            type: text
+          - name: credit
+            label: Photographer credit
+            type: string
+          - name: source
+            label: Source link
+            type: string
+          - name: license
+            label: Photo license
+            type: string
+          - name: licenseUrl
+            label: License link
+            type: string
   - name: availability
     label: Page availability and links
     type: file
