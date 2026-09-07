@@ -8,7 +8,7 @@
   "map": {
     "label": "Map",
     "url": "https://map.roadratings.com",
-    "available": false
+    "available": true
   },
   "data": {
     "label": "Data",
