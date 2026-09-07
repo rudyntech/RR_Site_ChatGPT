@@ -1,8 +1,9 @@
 (() => {
   const script = document.currentScript;
   // Production subdomains always read the same canonical file. Previews use their own copy.
-  const endpoint = /(^|\.)roadratings\.com$/.test(location.hostname)
-    ? 'https://home.roadratings.com/availability.json'
+  const production = /(^|\.)roadratings\.com$/.test(location.hostname);
+  const endpoint = production
+    ? 'https://roadratings.com/availability.json'
     : new URL('../availability.json', script.src).href;
   const links = [...document.querySelectorAll('[data-page]')];
   function unavailable(link, label) {
@@ -23,10 +24,11 @@
       const pages = await response.json();
       links.forEach(link => {
         const page = pages[link.dataset.page];
-        if (!page || page.available !== true || !/^https:\/\//.test(page.url)) {
+        const enabled = !production && page?.previewAvailable !== undefined ? page.previewAvailable : page?.available;
+        if (!page || enabled !== true || !/^https:\/\//.test(page.url)) {
           unavailable(link, page?.label || link.dataset.page); return;
         }
-        link.href = page.url;
+        link.href = !production && /^\/(?!\/)/.test(page.previewPath || '') ? new URL(page.previewPath, location.origin).href : page.url;
         link.removeAttribute('aria-disabled');
         link.removeAttribute('role');
         link.removeAttribute('tabindex');
