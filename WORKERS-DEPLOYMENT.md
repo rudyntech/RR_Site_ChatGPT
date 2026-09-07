@@ -8,19 +8,19 @@ Worker name: rr-site-chatgpt. In Cloudflare Workers Builds, use deploy command `
 
 No domains or routes are declared in wrangler.jsonc. Deployment does not register domains or change the current Google Sheets stopgap redirect.
 
-The preview root serves Home, /about/ serves About. Both links remain within the preview. About has previewAvailable=true but available=false in the same availability.json so it can be tested without enabling its production links. Map and Pitch remain unavailable. Data still goes to its real subdomain.
+The preview root serves Home, /about/ serves About. Both links remain within the preview. About has previewAvailable=true and available=true now that the user has connected and verified its custom domain. Map and Pitch remain unavailable. Data still goes to its real subdomain.
 
 ## Later, at launch
 
 1. Test the deployed preview, including sections, scrolling, links, photos and mobile layout.
-2. Before About goes live, make https://roadratings.com/availability.json serve JSON. If the apex stopgap redirect must remain, adjust that redirect to exclude this exact path and ensure this Worker serves it. Otherwise do this with the apex cutover. Merely adding the About domain will not fix the canonical settings endpoint while the apex redirects all requests to Sheets.
-3. Attach about.roadratings.com to this Worker using Cloudflare Custom Domains. Worker code internally serves /about/ at its root; all asset paths remain valid. Verify HTTPS and navigation.
+2. Production settings now use https://about.roadratings.com/availability.json, verified to return JSON. Keep this shared endpoint even after the apex launches. The apex settings path currently redirects to Sheets and must not be used by navigation.
+3. The user has attached about.roadratings.com using Cloudflare Custom Domains and verified the page. Worker code internally serves /about/ at its root; all asset paths remain valid. After deploying the navigation fix, verify Home, Data and About are enabled and Map and Pitch remain unavailable.
 4. When ready to replace the stopgap, attach roadratings.com to this Worker and disable only the apex Google Sheets redirect. Keep data.roadratings.com redirecting to Sheets.
 5. Configure home.roadratings.com to redirect to https://roadratings.com, preserving path/query. The Worker has this behavior ready if that domain is later attached; existing dashboard redirects can also handle it. Do not duplicate conflicting rules.
-6. Set about.available=true in availability.json after the custom domain is verified. The map app can independently integrate the shared navigation when ready.
+6. About is now available=true in availability.json. The map app can independently integrate the shared navigation when ready.
 
 ## Shared navigation across accounts
 
-Production uses https://roadratings.com/availability.json. It is public JSON with Access-Control-Allow-Origin: * and Cache-Control: no-store. No account credentials are needed to read it. The Map app owner may include https://roadratings.com/shared/navigation.js and navigation.css, add data-page markup, and allow roadratings.com in its script/style/connect CSP. Map deployment itself is outside this repository.
+Production uses https://about.roadratings.com/availability.json. It is public JSON with Access-Control-Allow-Origin: * and Cache-Control: no-store. No account credentials are needed to read it. The Map app owner may include https://about.roadratings.com/shared/navigation.js and navigation.css, add data-page markup, and allow https://about.roadratings.com in its script/style/connect CSP. Map deployment itself is outside this repository.
 
 Text and image edits remain in about/content.json and assets/about. See EDITING.md for content editing. The original Fully Available files and logo are preserved in Git.

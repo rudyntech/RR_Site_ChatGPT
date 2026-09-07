@@ -15,7 +15,7 @@ export default {
     result.headers.set('X-Content-Type-Options', 'nosniff');
     result.headers.set('Referrer-Policy', 'no-referrer');
     result.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-    result.headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self' https://roadratings.com; connect-src 'self' https://roadratings.com; img-src 'self' data: https://images.pexels.com; style-src 'self' https://roadratings.com; base-uri 'self'; form-action 'none'; frame-ancestors 'none'");
+    result.headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self' https://roadratings.com https://about.roadratings.com; connect-src 'self' https://roadratings.com https://about.roadratings.com; img-src 'self' data: https://images.pexels.com; style-src 'self' https://roadratings.com https://about.roadratings.com; base-uri 'self'; form-action 'none'; frame-ancestors 'none'");
     if (url.pathname === '/availability.json') {
       result.headers.set('Access-Control-Allow-Origin', '*');
       result.headers.set('Cache-Control', 'no-store');

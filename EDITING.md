@@ -15,19 +15,19 @@ You can also send revised copy and photos to Codex and ask it to update the rele
 
 ## Turn pages on or off
 
-Edit availability.json in this repository. Change available to true or false under the page name, then commit. URLs and labels are also stored there. All production RoadRatings pages load the one file at https://roadratings.com/availability.json, without a cached fallback; open pages refresh every minute and when returning to the tab. Failed settings requests disable navigation until a successful retry.
+Edit availability.json in this repository. Change available to true or false under the page name, then commit. URLs and labels are also stored there. All production RoadRatings pages load the one file at https://about.roadratings.com/availability.json, without a cached fallback; open pages refresh every minute and when returning to the tab. Failed settings requests disable navigation until a successful retry.
 
-Home and Data are enabled in production. About is enabled only in previews. Map and Pitch remain disabled. About itself can still be previewed directly at /about/; navigation availability is not access control.
+Home, Data and About are enabled in production. Map and Pitch remain disabled. About can also be previewed directly at /about/; navigation availability is not access control.
 
 ## Deploy and launch
 
-Use WORKERS-DEPLOYMENT.md for current Workers instructions. The earlier Pages setup has been replaced. Development Home and About links use previewPath; previewAvailable enables About only in previews. Production About remains disabled until launch.
+Use WORKERS-DEPLOYMENT.md for current Workers instructions. The earlier Pages setup has been replaced. Development Home and About links use previewPath; previewAvailable can override production availability in previews. Production About is now enabled on its verified custom domain.
 
 ## Future pages and existing external pages
 
 Use shared/navigation.css and shared/navigation.js on every future page, and the data-page markup shown in about/index.html for every internal destination link, including logos. Include page-label or page-picture and availability-badge children. Available and unavailable states are built into the shared styles. Unavailable links have no href and are skipped by keyboard navigation.
 
-For separately hosted pages, load these shared files from https://roadratings.com/shared/ and permit that origin in their Content Security Policy for scripts, styles and connections. Every production subdomain reads the canonical home availability file. The already-live Data application must adopt this shared navigation when its code is available; this repository cannot change that separate application.
+For separately hosted pages, load these shared files from https://about.roadratings.com/shared/ and permit that origin in their Content Security Policy for scripts, styles and connections. Every integrated production subdomain reads the canonical availability file on About. Data currently redirects to Google Sheets, whose interface this repository cannot modify.
 
 Local and pages.dev previews read their local availability.json so unpublished settings can be tested without affecting production. Data destination URLs still point to their real subdomains.
 

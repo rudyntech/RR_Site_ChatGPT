@@ -3,7 +3,7 @@
   // Production subdomains always read the same canonical file. Previews use their own copy.
   const production = /(^|\.)roadratings\.com$/.test(location.hostname);
   const endpoint = production
-    ? 'https://roadratings.com/availability.json'
+    ? 'https://about.roadratings.com/availability.json'
     : new URL('../availability.json', script.src).href;
   const links = [...document.querySelectorAll('[data-page]')];
   function unavailable(link, label) {

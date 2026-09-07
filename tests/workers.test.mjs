@@ -19,10 +19,13 @@ test('root hostname routing and home redirect preserve paths and queries',async(
   assert.equal(redirect.status,308);assert.equal(redirect.headers.get('location'),'https://roadratings.com/about/?test=1');
 });
 test('availability response permits cross-account subdomains without caching',async()=>{
-  const response=await worker.fetch(new Request('https://roadratings.com/availability.json'),{ASSETS:{fetch:async()=>new Response(JSON.stringify(config))}});
+  const response=await worker.fetch(new Request('https://about.roadratings.com/availability.json'),{ASSETS:{fetch:async()=>new Response(JSON.stringify(config))}});
   assert.equal(response.headers.get('access-control-allow-origin'),'*');
   assert.equal(response.headers.get('cache-control'),'no-store');
   assert.ok(response.headers.get('content-security-policy').includes('https://roadratings.com'));
+  for (const policy of [response.headers.get('content-security-policy'),read('_headers')]) {
+    assert.match(policy,/connect-src[^;]*https:\/\/about\.roadratings\.com/);
+  }
 });
 test('About assets resolve at domain root and preview path',()=>{
   const html=read('about/index.html');
@@ -50,10 +53,11 @@ test('preview Home/About remain internal; production reads canonical availabilit
   const preview=await navigation('rr-site-chatgpt.rudyntech.workers.dev',config);
   assert.equal(preview.links.find(l=>l.dataset.page==='home').attrs.href,'https://rr-site-chatgpt.rudyntech.workers.dev/');
   assert.equal(preview.links.find(l=>l.dataset.page==='about').attrs.href,'https://rr-site-chatgpt.rudyntech.workers.dev/about/');
-  for(const host of ['about.roadratings.com','map.roadratings.com']) {
+  for(const host of ['roadratings.com','about.roadratings.com','map.roadratings.com']) {
     const result=await navigation(host,config);
-    assert.equal(result.endpoint,'https://roadratings.com/availability.json');
-    assert.equal(result.links.find(l=>l.dataset.page==='about').attrs.href,undefined);
+    assert.equal(result.endpoint,'https://about.roadratings.com/availability.json');
+    for (const key of ['home','data','about']) assert.equal(result.links.find(l=>l.dataset.page===key).attrs.href,config[key].url);
+    for (const key of ['map','pitch']) assert.equal(result.links.find(l=>l.dataset.page===key).attrs.href,undefined);
   }
 });
 test('all four quadrant states follow central production settings',async()=>{
