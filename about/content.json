@@ -1,25 +1,28 @@
 {
+  "hero": {
+    "src": "/assets/about/wheelie-crownmoto.png",
+    "alt": "Rudy having some fun on CA 35 in the SF Bay Area",
+    "caption": "Photo by crownmoto"
+  },
   "sections": [
     {
       "id": "summary",
       "title": "Summary",
       "open": false,
       "paragraphs": [
-        "RoadRatings is fundamentally about listing and rating every great motorcycle road in one place, giving riders an easy way to discover roads that match their riding style and encouraging them to get out and explore. Each road will be rated across multiple categories, providing far more useful information than a simple “good/bad” or 5-star rating. Starting in California, where Rudy has already ridden and rated approximately 99% of the state’s paved twisty roads, RoadRatings will expand across the entire US and eventually beyond, creating the definitive database of the world’s great riding roads.",
-        "With engaging gamification and social features, powerful road discovery, mapping and rating tools, and a documentary following a two-year motorcycle journey through every part of the US, RoadRatings aims to be far more than another mapping app. Think AllTrails for motorcyclists: a platform that not only helps riders find great roads, but gives them new reasons to ride, explore, contribute, and share. The ambition is simple but enormous: map the roads, inspire the ride, and build the definitive community around motorcycle exploration."
+        "<p>RoadRatings is fundamentally about listing and rating every great motorcycle road in one place, giving riders an easy way to discover roads that match their riding style and encouraging them to get out and explore. Each road will be rated across multiple categories, providing far more useful information than a simple “good/bad” or 5-star rating. Starting in California, where Rudy has already ridden and rated approximately 99% of the state’s paved twisty roads, RoadRatings will expand across the entire US and eventually beyond, creating the definitive database of the world’s great riding roads.</p>",
+        "<p>With engaging gamification and social features, powerful road discovery, mapping and rating tools, and a documentary following a two-year motorcycle journey through every part of the US, RoadRatings aims to be far more than another mapping app. Think AllTrails for motorcyclists: a platform that not only helps riders find great roads, but gives them new reasons to ride, explore, contribute, and share. The ambition is simple but enormous: map the roads, inspire the ride, and build the definitive community around motorcycle exploration.</p>"
       ],
       "images": [
         {
           "src": "/assets/about/latigo-canyon-malibu.jpg",
-          "alt": "A winding paved road through the green hills of Malibu.",
-          "caption": "Latigo Canyon Road · Malibu, California",
-          "source": ""
+          "alt": "A winding paved road through the green hills of Malibu. Can you Spot the V-Strom",
+          "caption": "Latigo Canyon Road · Malibu, California"
         },
         {
           "src": "/assets/about/poudre-canyon-colorado.jpg",
-          "alt": "Rudy sitting beside a yellow sport bike with snow-covered mountains behind him.",
-          "caption": "Poudre Canyon Road · Colorado",
-          "source": ""
+          "alt": "Rudy sitting beside his 08 ZX6R with snow-covered mountains behind him.",
+          "caption": "Poudre Canyon Road · Colorado"
         }
       ]
     },
@@ -28,31 +31,29 @@
       "title": "Deep Dive",
       "open": false,
       "paragraphs": [
-        "RoadRatings started with a simple frustration: finding a great motorcycle road often takes more work than it should. Recommendations are scattered across forums, maps, videos, and conversations. Even when you find a promising route, “great road” can mean something completely different to the person recommending it. A scenic cruise, a tight technical climb, and a stretch of sweeping corners can all earn five stars—but they offer very different rides.",
-        "The aim of RoadRatings is to bring those roads into one place and describe what makes each one worth riding. Instead of reducing a road to a single score, the project uses ratings across multiple categories. Keeping those characteristics separate lets riders compare roads based on what matters to them, rather than relying entirely on someone else’s overall preference.",
-        "A useful rating needs a consistent reference point. If similar characteristics are assessed differently from road to road, comparisons become less meaningful. The approach is to apply a common set of criteria across the collection, drawing on firsthand riding experience to describe each road within that shared framework. There is still judgment involved, but the goal is to make that judgment more consistent and useful.",
-        "California is the starting point. Rudy has already ridden and rated approximately 99% of the state’s paved twisty roads, building the foundation through firsthand experience. Expanding coverage means extending both parts of that work: identifying the roads worth including and collecting enough information to make meaningful comparisons.",
-        "The map connects those ratings to the roads themselves. Each road’s information is associated with its geographic location, allowing riders to explore an area visually and inspect the roads that catch their attention. Instead of moving between a recommendation list and an unrelated map, riders can see where a road is and learn about it in the same place.",
-        "That geographic context matters. A road might be worth a dedicated trip, fit naturally into a longer outing, or provide an interesting alternative nearby. Seeing roads in relation to one another helps riders recognize those possibilities. The map supports that exploration; a collection of rated roads is a foundation for planning, even before more advanced route-building features are added.",
-        "The ratings and map are two views of the same underlying information. A road’s record brings together its identity, location, and assessed characteristics. Keeping those details connected allows the information to be presented geographically for exploration or as a list for closer comparison, without maintaining separate descriptions for each view.",
-        "As filtering develops, those individual characteristics can help riders narrow down the collection. Rather than searching only for the highest-rated roads, you could look for roads that suit the kind of outing you have in mind. The same information can support different choices depending on your preferences, available time, and appetite for a particular riding experience.",
-        "Road ratings also have limits. A recorded assessment describes an experience of a road; it cannot guarantee the conditions you will encounter on your next visit. Weather, maintenance, traffic, and closures can change independently of the road’s underlying character. As the collection grows, distinguishing lasting characteristics from observations that may become outdated will be an important part of keeping it useful.",
-        "The longer-term vision includes favorites, sharing, and community contributions. Saving a road would let you return to the same record later, while sharing it would give another rider a direct connection to the information behind your recommendation. Contributions could add local knowledge and fresh observations. Building those features well means keeping updates attached to the correct roads and distinguishing personal preferences from information that is useful to everyone.",
-        "Alongside the platform is a planned two-year motorcycle journey through every part of the United States, with a documentary following the experience. The trip would extend the firsthand approach behind the California collection: ride the roads, record observations, document the journey, and use what is learned to improve the resource. Community features and gamification could give other riders ways to participate by exploring unfamiliar areas and contributing useful knowledge.",
-        "RoadRatings is being built in stages. The existing road collection and developing map provide the foundation; broader coverage, more personalized discovery, community participation, and the documentary journey are the next ambitions. The purpose connecting them is straightforward: make great motorcycle roads easier to discover, help riders choose experiences they will enjoy, and give people more reasons to explore."
+        "<p>RoadRatings started with a simple frustration: finding a great motorcycle road often takes more work than it should. Recommendations are scattered across forums, maps, videos, and conversations. Even when you find a promising route, “great road” can mean something completely different to the person recommending it. A scenic cruise, a tight technical climb, and a stretch of sweeping corners can all earn five stars—but they offer very different rides.</p>",
+        "<p>The aim of RoadRatings is to bring those roads into one place and describe what makes each one worth riding. Instead of reducing a road to a single score, the project uses ratings across multiple categories. Keeping those characteristics separate lets riders compare roads based on what matters to them, rather than relying entirely on someone else’s overall preference.</p>",
+        "<p>A useful rating needs a consistent reference point. If similar characteristics are assessed differently from road to road, comparisons become less meaningful. The approach is to apply a common set of criteria across the collection, drawing on firsthand riding experience to describe each road within that shared framework. There is still judgment involved, but the goal is to make that judgment more consistent and useful.</p>",
+        "<p>California is the starting point. Rudy has already ridden and rated approximately 99% of the state’s paved twisty roads, building the foundation through firsthand experience. Expanding coverage means extending both parts of that work: identifying the roads worth including and collecting enough information to make meaningful comparisons.</p>",
+        "<p>The map connects those ratings to the roads themselves. Each road’s information is associated with its geographic location, allowing riders to explore an area visually and inspect the roads that catch their attention. Instead of moving between a recommendation list and an unrelated map, riders can see where a road is and learn about it in the same place.</p>",
+        "<p>That geographic context matters. A road might be worth a dedicated trip, fit naturally into a longer outing, or provide an interesting alternative nearby. Seeing roads in relation to one another helps riders recognize those possibilities. The map supports that exploration; a collection of rated roads is a foundation for planning, even before more advanced route-building features are added.</p>",
+        "<p>The ratings and map are two views of the same underlying information. A road’s record brings together its identity, location, and assessed characteristics. Keeping those details connected allows the information to be presented geographically for exploration or as a list for closer comparison, without maintaining separate descriptions for each view.</p>",
+        "<p>As filtering develops, those individual characteristics can help riders narrow down the collection. Rather than searching only for the highest-rated roads, you could look for roads that suit the kind of outing you have in mind. The same information can support different choices depending on your preferences, available time, and appetite for a particular riding experience.</p>",
+        "<p>Road ratings also have limits. A recorded assessment describes an experience of a road; it cannot guarantee the conditions you will encounter on your next visit. Weather, maintenance, traffic, and closures can change independently of the road’s underlying character. As the collection grows, distinguishing lasting characteristics from observations that may become outdated will be an important part of keeping it useful.</p>",
+        "<p>The longer-term vision includes favorites, sharing, and community contributions. Saving a road would let you return to the same record later, while sharing it would give another rider a direct connection to the information behind your recommendation. Contributions could add local knowledge and fresh observations. Building those features well means keeping updates attached to the correct roads and distinguishing personal preferences from information that is useful to everyone.</p>",
+        "<p>Alongside the platform is a planned two-year motorcycle journey through every part of the United States, with a documentary following the experience. The trip would extend the firsthand approach behind the California collection: ride the roads, record observations, document the journey, and use what is learned to improve the resource. Community features and gamification could give other riders ways to participate by exploring unfamiliar areas and contributing useful knowledge.</p>",
+        "<p>RoadRatings is being built in stages. The existing road collection and developing map provide the foundation; broader coverage, more personalized discovery, community participation, and the documentary journey are the next ambitions. The purpose connecting them is straightforward: make great motorcycle roads easier to discover, help riders choose experiences they will enjoy, and give people more reasons to explore.</p>"
       ],
       "images": [
         {
           "src": "/assets/about/suzuki-dl650-river.jpg",
-          "alt": "A Suzuki DL650 crossing a shallow river in a forest.",
-          "caption": "2008 Suzuki DL650",
-          "source": ""
+          "alt": "Heavily laden, the mighty V-Strom was stopped mid-crossing by a large rock.",
+          "caption": "V-Strom stuck mid-stream"
         },
         {
           "src": "/assets/about/dl650-new-idria-mine.jpg",
-          "alt": "A Suzuki DL650 resting on its side on a steep dirt trail near New Idria Mine.",
-          "caption": "New Idria Mine · Suzuki DL650",
-          "source": ""
+          "alt": "Climbing up and away from New Idria Mine, the deep mud proved too slick for the Shinko 705s",
+          "caption": "New Idria Mine · V-Strom"
         }
       ]
     },
@@ -61,32 +62,24 @@
       "title": "Who Is Rudy (9/4/26)",
       "open": false,
       "paragraphs": [
-        "Rudy’s first brush with two wheels came at age eight, clinging to the back of his mom’s Harley-Davidson Sportster. The seed was planted. About ten years later, he borrowed her Vespa to get to work. Yet barely a mile from the house, he was grinning so hard he knew: the first chance I get, I’m getting my own bike.",
-        "That chance came in college, when several co-op paychecks turned into a shiny 2008 Ninja 250. Rudy cut his teeth carving the mountains of Tennessee, and from then on he’s always had a bike…or a few. His garage has been a revolving door of old, broken machines he’d fix, ride, and sell for a profit. Twenty-one bikes and roughly 275,000 miles later, he’s ridden across most of the country. The crown jewel? A two-month, 11,000-mile double cross-country trip on a 2008 KLR650 in 2015. A couple of Iron Butts too (1k miles in 20 hours, 1.3k miles in 23.5 hours).",
-        "The track bug bit in 2014 while he was in grad school in Colorado, then bit harder after moving to California in 2016. By 2021 he was racing with AFM and Supermoto USA West, adding CRA to the mix in 2025.",
-        "Rudy’s no stranger to teaching, either. He’s been doing it since age 17, starting with math and English at Kumon, later adding chemistry and physics tutoring through undergrad and grad school. In 2021, he launched a bachata dance company that he ran full-time for 3 years until injuries took him out of the dance scene. In the riding world, he began teaching privately in 2017 and wrenching in 2018, ramping up in earnest by 2024. He’s now clocked 18 years of teaching and 11 years of wrenching experience, including a stint as a mechanic at The Garage of Silicon Valley.",
-        "And when he’s not touring, tracking, racing, wrenching, or teaching? He’s geeking out over twisty-road data. In 2017, Rudy started cataloging and rating every road he’d ridden, plus every road he wanted to ride. That project grew into RoadRatings.com, an attempt to list every paved, twisty road in America (and eventually the world!), with Rudy aiming to personally ride and rate them all. Multiple developer and investor pitches later, the app is still waiting for the right team to bring it to life. If that sounds like your kind of project, Rudy’s always happy to talk shop."
+        "<p>Rudy’s first brush with two wheels came at age eight, clinging to the back of his mom’s Harley-Davidson Sportster. The seed was planted. About ten years later, he borrowed her Vespa to get to work. Yet barely a mile from the house, he was grinning so hard he knew: the first chance I get, I’m getting my own bike.</p>",
+        "<p>That chance came in college, when several co-op paychecks turned into a shiny 2008 Ninja 250. Rudy cut his teeth carving the mountains of Tennessee, and from then on he’s always had a bike…or a few. His garage has been a revolving door of old, broken machines he’d fix, ride, and sell for a profit. Twenty-one bikes and roughly 275,000 miles later, he’s ridden across most of the country. The crown jewel? A two-month, 11,000-mile double cross-country trip on a 2008 KLR650 in 2015. A couple of Iron Butts too (1k miles in 20 hours, 1.3k miles in 23.5 hours).</p>",
+        "<p>The track bug bit in 2014 while he was in grad school in Colorado, then bit harder after moving to California in 2016. By 2021 he was racing with AFM and Supermoto USA West, adding CRA to the mix in 2025.</p>",
+        "<p>Rudy’s no stranger to teaching, either. He’s been doing it since age 17, starting with math and English at Kumon, later adding chemistry and physics tutoring through undergrad and grad school. In 2021, he launched a bachata dance company that he ran full-time for 3 years until injuries took him out of the dance scene. In the riding world, he began teaching privately in 2017 and wrenching in 2018, ramping up in earnest by 2024. He’s now clocked 18 years of teaching and 11 years of wrenching experience, including a stint as a mechanic at The Garage of Silicon Valley.</p>",
+        "<p>And when he’s not touring, tracking, racing, wrenching, or teaching? He’s geeking out over twisty-road data. In 2017, Rudy started cataloging and rating every road he’d ridden, plus every road he wanted to ride. That project grew into RoadRatings.com, an attempt to list every paved, twisty road in America (and eventually the world!), with Rudy aiming to personally ride and rate them all. Multiple developer and investor pitches later, the app is still waiting for the right team to bring it to life. If that sounds like your kind of project, Rudy’s always happy to talk shop.</p>"
       ],
       "images": [
         {
           "src": "/assets/about/maintenance-workshop.jpg",
-          "alt": "People gathered around motorcycles during a maintenance workshop.",
-          "caption": "In the workshop",
-          "source": ""
+          "alt": "One of over a dozen free maintenance workshops Rudy has put on",
+          "caption": "Maintenance workshop"
         },
         {
           "src": "/assets/about/sv650-race-trophies.jpg",
-          "alt": "Rudy posing beside a race-prepared Suzuki SV650 and trophies.",
-          "caption": "Suzuki SV650 · Race day",
-          "source": ""
+          "alt": "Rudy and some trophies with his first race bike, a 2005 SV650",
+          "caption": "Suzuki SV650 · Race day"
         }
       ]
     }
-  ],
-  "hero": {
-    "src": "/assets/about/wheelie-crownmoto.png",
-    "alt": "A rider lifting the front wheel on a forest road, with the RoadRatings logo and the words For the roads that move you.",
-    "caption": "Photo by crownmoto",
-    "source": ""
-  }
+  ]
 }
