@@ -1,6 +1,15 @@
 (async () => {
   const main = document.getElementById('story');
   const element = (tag, text, className) => {const node=document.createElement(tag); if(text)node.textContent=text; if(className)node.className=className; return node;};
+  function photoFigure(photo, hero = false) {
+    const figure = element('figure', null, hero ? 'about-hero' : 'story-photo');
+    const img = element('img'); img.src = photo.src; img.alt = photo.alt || '';
+    img.loading = hero ? 'eager' : 'lazy'; img.decoding = 'async';
+    if (hero) { img.fetchPriority = 'high'; img.width = 2048; img.height = 1365; }
+    figure.append(img);
+    if (photo.caption) figure.append(element('figcaption', photo.caption));
+    return figure;
+  }
   function bikeTable(data) {
     const container = element('div', null, 'bike-history');
     const table = element('table', null, 'bike-table');
@@ -66,24 +75,30 @@
     const bikes = await fetch('/about/bikes.json', {cache:'no-cache'})
       .then(response => response.ok ? response.json() : null).catch(() => null);
     const fragment=document.createDocumentFragment();
+    if (content.hero?.src) fragment.append(photoFigure(content.hero, true));
     content.sections.forEach((section,index)=>{
       const details=element('details',null,section.id); details.id=section.id; details.open=section.open === true;
       const summary=element('summary'); summary.append(element('span',String(index+1).padStart(2,'0'),'number'),element('h2',section.title));
-      const body=element('div',null,'section-content'); const copy=element('div',null,'copy');
-      section.paragraphs.forEach(text=>copy.append(window.renderRoadRatingsText(text)));
-      const pictures=element('div',null,'pictures');
-      section.images.forEach(photo=>{const figure=element('figure'); const img=element('img'); img.src=photo.src; img.alt=photo.alt; img.loading='lazy'; img.decoding='async'; img.width=720; img.height=540; figure.append(img); if(photo.caption)figure.append(element('figcaption',photo.caption)); pictures.append(figure);});
-      if (section.id === 'deep-dive') {
-        const paragraphs = [...copy.children];
-        const photos = [...pictures.children];
-        const midpoint = Math.ceil(paragraphs.length / 2);
-        [paragraphs.slice(0, midpoint), paragraphs.slice(midpoint)].forEach((items, column) => {
-          const block = element('div', null, 'deep-column');
-          items.forEach((paragraph, i) => {block.append(paragraph); if (i === 2 && photos[column]) block.append(photos[column]);});
-          if (items.length < 3 && photos[column]) block.append(photos[column]);
-          body.append(block);
-        });
-      } else body.append(copy,pictures);
+      const body=element('div',null,'section-content');
+      const photos = (section.images || []).slice(0, 2);
+      if (section.id === 'summary') {
+        const copy = element('div', null, 'summary-copy');
+        section.paragraphs.forEach(text => copy.append(window.renderRoadRatingsText(text)));
+        const gallery = element('div', null, 'story-gallery');
+        photos.forEach(photo => gallery.append(photoFigure(photo)));
+        body.append(copy, gallery);
+      } else {
+        const count = Math.max(photos.length, 1);
+        const chunk = Math.ceil(section.paragraphs.length / count);
+        for (let i = 0; i < count; i++) {
+          const row = element('div', null, 'story-row' + (photos[i] ? '' : ' story-row--text'));
+          const copy = element('div', null, 'copy');
+          section.paragraphs.slice(i * chunk, (i + 1) * chunk).forEach(text => copy.append(window.renderRoadRatingsText(text)));
+          row.append(copy);
+          if (photos[i]) row.append(photoFigure(photos[i]));
+          body.append(row);
+        }
+      }
       details.append(summary,body);
       if (section.id === 'who-is-rudy' && bikes) details.append(bikeTable(bikes));
       fragment.append(details);

@@ -39,6 +39,26 @@ content:
     path: about/content.json
     format: json
     fields:
+      - name: hero
+        label: Main header image
+        type: object
+        fields:
+          - name: src
+            label: Header picture
+            type: image
+            required: true
+            options:
+              media: about-pictures
+          - name: alt
+            label: Picture description
+            type: string
+            required: true
+          - name: caption
+            label: Caption or photo credit
+            type: text
+          - name: source
+            label: Source (for your records)
+            type: string
       - name: sections
         label: Page sections
         type: object
@@ -73,7 +93,7 @@ content:
             label: Pictures
             type: object
             list:
-              min: 2
+              min: 0
               max: 2
               collapsible:
                 collapsed: true

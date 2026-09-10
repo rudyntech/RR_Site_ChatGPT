@@ -56,8 +56,7 @@ test('preview Home/About remain internal; production reads canonical availabilit
   for(const host of ['roadratings.com','about.roadratings.com','map.roadratings.com']) {
     const result=await navigation(host,config);
     assert.equal(result.endpoint,'https://about.roadratings.com/availability.json');
-    for (const key of ['home','data','about']) assert.equal(result.links.find(l=>l.dataset.page===key).attrs.href,config[key].url);
-    for (const key of ['map','pitch']) assert.equal(result.links.find(l=>l.dataset.page===key).attrs.href,undefined);
+    for (const [key,page] of Object.entries(config)) assert.equal(result.links.find(l=>l.dataset.page===key).attrs.href,page.available ? page.url : undefined);
   }
 });
 test('all four quadrant states follow central production settings',async()=>{

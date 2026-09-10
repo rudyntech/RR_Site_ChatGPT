@@ -5,11 +5,11 @@
 Use https://app.pagescms.org and sign in with your rudyntech GitHub account. Open RR_Site_ChatGPT and select main. The repository's .pages.yml configures these forms:
 
 1. About page: expand Summary, Deep Dive or Who Is Rudy. Edit the title or individual paragraph fields. Paragraphs now have a visual formatting toolbar: select text and use Bold or Italic, or add lists. Formatting is saved automatically; you do not need to edit HTML. Embedded images and executable content are not supported in paragraph fields; use the picture controls instead.
-2. Pictures: expand either picture, select/upload a JPG, JPEG, PNG or WebP, and edit its description, caption and credit. Uploads go into assets/about; the original logo is outside this media folder. Use a new filename when replacing a photo to avoid old browser caches. Existing external placeholders can remain until replaced.
-3. Page availability and links: change destination addresses or turn availability on/off. Off displays COMING SOON; it does not make the destination private. Home, Data and About currently remain on; Map and Pitch remain off until their launches.
+2. Pictures: open Main header image to replace the banner, or expand a section picture, select/upload a JPG, JPEG, PNG or WebP, and edit its description, caption and credit. Uploads go into assets/about; the original logo is outside this media folder. Use a new filename when replacing a photo to avoid old browser caches. Each section supports up to two photos. The banner and section photos display without cropping.
+3. Page availability and links: change destination addresses or turn availability on/off. Off displays COMING SOON; it does not make the destination private. Read the current switches in this form for live availability.
 4. Save your changes. Saving on main commits to GitHub and triggers Cloudflare publication. This configuration has no separate draft approval or pre-publication preview. Wait for deployment, then refresh the public page to check your edit.
 
-The page keeps three sections, two pictures per section, and starts all sections collapsed. Preview routing settings and section IDs are retained as hidden fields. If a Pages CMS screen asks you to create configuration, refresh/reopen the repository after .pages.yml has been pushed; do not replace it with a starter template.
+The page keeps three sections, up to two pictures per section, and starts all sections collapsed. Preview routing settings and section IDs are retained as hidden fields. If a Pages CMS screen asks you to create configuration, refresh/reopen the repository after .pages.yml has been pushed; do not replace it with a starter template.
 
 ## Rudy's bike table
 
@@ -34,7 +34,7 @@ You can also send revised copy and photos to Codex and ask it to update the rele
 
 Edit availability.json in this repository. Change available to true or false under the page name, then commit. URLs and labels are also stored there. All production RoadRatings pages load the one file at https://about.roadratings.com/availability.json, without a cached fallback; open pages refresh every minute and when returning to the tab. Failed settings requests disable navigation until a successful retry.
 
-Home, Data and About are enabled in production. Map and Pitch remain disabled. About can also be previewed directly at /about/; navigation availability is not access control.
+Availability is controlled by the current settings in availability.json. About can also be previewed directly at /about/; navigation availability is not access control.
 
 ## Deploy and launch
 
@@ -52,6 +52,6 @@ Local and pages.dev previews read their local availability.json so unpublished s
 
 index Fully Available.html and styles Fully Available.css are unchanged historical snapshots. They deliberately do not read live availability. Do not use the snapshot as a template for future pages. The original logo bytes are shared and unchanged.
 
-## Placeholder photos
+## About photography
 
-The six placeholders are remote Pexels photos; sources and photographer credits are recorded in about/content.json. Replace them with local images before final publication if you want to remove the third-party image dependency. Helmeted riders are placeholders, not portraits of Rudy.
+The main header uses the supplied crownmoto wheelie artwork. Summary uses Latigo Canyon and Poudre Canyon; Deep Dive uses the Suzuki DL650 river and New Idria Mine photos; Who Is Rudy uses the maintenance workshop and race trophies. All seven supplied files are preserved byte-for-byte in assets/about. The header is separate from the two-photo limit for each section.
