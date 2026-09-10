@@ -7,28 +7,28 @@
   },
   "map": {
     "label": "Map",
+    "subtitle": "The App",
     "url": "https://map.roadratings.com",
-    "available": true,
-    "subtitle": "The App"
+    "available": true
   },
   "data": {
     "label": "Data",
+    "subtitle": "The Spreadsheet",
     "url": "https://data.roadratings.com",
-    "available": true,
-    "subtitle": "The Spreadsheet"
+    "available": true
   },
   "pitch": {
     "label": "Pitch",
+    "subtitle": "The Opportunity",
     "url": "https://pitch.roadratings.com",
-    "available": false,
-    "subtitle": "The Plea"
+    "available": false
   },
   "about": {
     "label": "About",
+    "subtitle": "The Story",
     "url": "https://about.roadratings.com",
     "available": true,
     "previewPath": "/about/",
-    "previewAvailable": true,
-    "subtitle": "The Story"
+    "previewAvailable": true
   }
 }
