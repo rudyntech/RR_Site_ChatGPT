@@ -55,3 +55,7 @@ index Fully Available.html and styles Fully Available.css are unchanged historic
 ## About photography
 
 The main header uses the supplied crownmoto wheelie artwork. Summary uses Latigo Canyon and Poudre Canyon; Deep Dive uses the Suzuki DL650 river and New Idria Mine photos; Who Is Rudy uses the maintenance workshop and race trophies. All seven supplied files are preserved byte-for-byte in assets/about. The header is separate from the two-photo limit for each section.
+
+## Landing quadrant subtext
+
+In Pages CMS, open Page availability and links, expand Map, Data, Pitch or About, and edit Landing quadrant subtext. Navigation label controls the main title. Leave the subtext blank to hide it. Save to main and wait for Cloudflare deployment. Both text fields update even for unavailable destinations.

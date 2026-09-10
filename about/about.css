@@ -81,3 +81,16 @@ body.about-page.photo-open { overflow:hidden; }
   .story-gallery { grid-template-columns:1fr; gap:24px; }
   .summary-copy { font-size:17px; }
 }
+
+/* Persistent navigation, with room to read and focus the content beneath it. */
+:root { --about-header-height:180px; }
+.site-header { position:sticky; top:0; z-index:20; background:#010101; box-shadow:0 0 0 32px #010101; }
+html { scroll-padding-top:calc(var(--about-header-height) + 20px); scroll-padding-bottom:90px; }
+main { padding-bottom:calc(32px + env(safe-area-inset-bottom)); }
+.site-footer { position:fixed; bottom:0; left:0; right:0; z-index:20; display:flex; justify-content:center; align-items:center; gap:20px; background:#010101; border-top:1px solid #65521b; padding:4px 20px calc(4px + env(safe-area-inset-bottom)); }
+.site-footer a { display:flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; color:var(--yellow); font-size:15px; text-decoration:none; }
+.site-footer a:hover { color:#fff0a9; }
+.site-footer a:focus-visible { outline:2px solid var(--yellow); outline-offset:2px; }
+.site-footer svg { width:22px; height:22px; }
+.skip-link { position:fixed; z-index:30; }
+@media(max-width:800px) { .site-header { box-shadow:0 0 0 16px #010101; } }

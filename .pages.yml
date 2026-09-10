@@ -20,6 +20,10 @@ components:
         label: Navigation label
         type: string
         required: true
+      - name: subtitle
+        label: Landing quadrant subtext
+        type: string
+        description: Shown below the main title on the landing page. Leave blank to hide it.
       - name: url
         label: Destination address
         type: string
@@ -204,6 +208,10 @@ content:
             label: Navigation label
             type: string
             required: true
+          - name: subtitle
+            label: Landing quadrant subtext
+            type: string
+            description: Shown below About on the landing page. Leave blank to hide it.
           - name: url
             label: Destination address
             type: string

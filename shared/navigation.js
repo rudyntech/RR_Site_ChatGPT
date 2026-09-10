@@ -24,6 +24,13 @@
       const pages = await response.json();
       links.forEach(link => {
         const page = pages[link.dataset.page];
+        const title = link.querySelector('.page-label:not(.quadrant__subtitle)');
+        const subtitle = link.querySelector('.quadrant__subtitle');
+        if (title && typeof page?.label === 'string') title.textContent = page.label;
+        if (subtitle && typeof page?.subtitle === 'string') {
+          subtitle.textContent = page.subtitle;
+          subtitle.hidden = !page.subtitle.trim();
+        }
         const enabled = !production && page?.previewAvailable !== undefined ? page.previewAvailable : page?.available;
         if (!page || enabled !== true || !/^https:\/\//.test(page.url)) {
           unavailable(link, page?.label || link.dataset.page); return;

@@ -1,4 +1,8 @@
 (async () => {
+  const header = document.querySelector('.site-header');
+  if (header) new ResizeObserver(() => {
+    document.documentElement.style.setProperty('--about-header-height', header.getBoundingClientRect().height + 'px');
+  }).observe(header);
   const main = document.getElementById('story');
   const element = (tag, text, className) => {const node=document.createElement(tag); if(text)node.textContent=text; if(className)node.className=className; return node;};
   function photoFigure(photo, hero = false) {

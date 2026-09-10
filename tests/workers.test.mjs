@@ -31,7 +31,7 @@ test('About assets resolve at domain root and preview path',()=>{
   const html=read('about/index.html');
   for(const base of ['https://about.roadratings.com/','https://preview.workers.dev/about/']) {
     for(const [,ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
-      if(ref.startsWith('#'))continue;
+      if(!ref.startsWith('/'))continue;
       const pathname=new URL(ref,base).pathname;
       assert.ok(fs.existsSync(new URL('../public'+pathname,import.meta.url)),pathname);
     }
@@ -40,9 +40,9 @@ test('About assets resolve at domain root and preview path',()=>{
   assert.ok(JSON.parse(read('about/content.json')).sections.every(s=>s.open===false));
 });
 async function navigation(host,pages) {
-  const links=Object.keys(config).map(key=>({dataset:{page:key},attrs:{},badge:{},classes:new Set(),
+  const links=Object.keys(config).map(key=>({dataset:{page:key},attrs:{},badge:{},title:{},subtitle:{},classes:new Set(),
     setAttribute(k,v){this.attrs[k]=v},removeAttribute(k){delete this.attrs[k]},
-    set href(v){this.attrs.href=v},querySelector(){return this.badge}}));
+    set href(v){this.attrs.href=v},querySelector(selector){return selector === '.availability-badge' ? this.badge : selector === '.quadrant__subtitle' ? this.subtitle : this.title}}));
   links.forEach(l=>l.classList={add:k=>l.classes.add(k),remove:k=>l.classes.delete(k)});
   let endpoint;
   vm.runInNewContext(read('shared/navigation.js'),{document:{currentScript:{src:'https://'+host+'/shared/navigation.js'},querySelectorAll:()=>links,addEventListener(){}},location:{hostname:host,origin:'https://'+host},URL,AbortSignal,setInterval(){},fetch:async url=>{endpoint=url;return {ok:true,json:async()=>pages}}});
@@ -67,4 +67,16 @@ test('all four quadrant states follow central production settings',async()=>{
     assert.equal(link.badge.hidden,available);
     assert.equal(link.classes.has('is-unavailable'),!available);
   }
+});
+
+test('CMS labels and subtitles update even when a quadrant is unavailable',async()=>{
+  for(const available of [true,false]) {
+    const result=await navigation('roadratings.com',{...config,pitch:{...config.pitch,label:'Invest',subtitle:'The Opportunity',available}});
+    const link=result.links.find(l=>l.dataset.page==='pitch');
+    assert.equal(link.title.textContent,'Invest');
+    assert.equal(link.subtitle.textContent,'The Opportunity');
+    assert.equal(link.badge.hidden,available);
+  }
+  const result=await navigation('roadratings.com',{...config,pitch:{...config.pitch,subtitle:''}});
+  assert.equal(result.links.find(l=>l.dataset.page==='pitch').subtitle.hidden,true);
 });
