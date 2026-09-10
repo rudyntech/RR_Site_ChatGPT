@@ -78,7 +78,14 @@
     if (content.hero?.src) fragment.append(photoFigure(content.hero, true));
     content.sections.forEach((section,index)=>{
       const details=element('details',null,section.id); details.id=section.id; details.open=section.open === true;
-      const summary=element('summary'); summary.append(element('span',String(index+1).padStart(2,'0'),'number'),element('h2',section.title));
+      const summary=element('summary');
+      const heading=element('h2',section.title);
+      const datedTitle=section.id === 'who-is-rudy' && section.title.match(/^(.*?)\s+(\(\d{1,2}\/\d{1,2}\/\d{2,4}\))$/);
+      if (datedTitle) {
+        heading.textContent=datedTitle[1] + ' ';
+        heading.append(element('span',datedTitle[2],'section-date'));
+      }
+      summary.append(element('span',String(index+1).padStart(2,'0'),'number'),heading);
       const body=element('div',null,'section-content');
       const photos = (section.images || []).slice(0, 2);
       if (section.id === 'summary') {
