@@ -64,7 +64,7 @@ body {
 }
 
 .quadrant {
-  --content-y: 0px;
+  --content-y: clamp(4px, 1.4dvh, 8px);
   position: relative;
   z-index: 1;
   display: flex;
@@ -82,21 +82,9 @@ body {
   transition: background-color 140ms ease;
 }
 
-/* Small offsets reproduce the supplied reference's intentionally low-set labels. */
-.quadrant--map {
-  --content-y: clamp(4px, 1.4dvh, 8px);
-}
-
-.quadrant--data,
-.quadrant--pitch {
-  --content-y: clamp(8px, 3.3dvh, 16px);
-}
-
-.quadrant--about {
-  --content-y: clamp(9px, 3.55dvh, 17px);
-}
-
+/* Every quadrant shares the same label position, independent of availability. */
 .quadrant__content {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,6 +193,10 @@ a.quadrant:focus-visible {
 }
 
 .quadrant__status {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
   margin-top: clamp(10px, 2.6dvh, 28px);
   padding: clamp(6px, 1.3dvh, 13px) clamp(10px, 1.5vw, 24px);
