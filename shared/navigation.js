@@ -16,12 +16,18 @@
     const badge = link.querySelector('.availability-badge');
     if (badge) badge.hidden = false;
   }
-  links.forEach(link => unavailable(link, link.dataset.page));
+
   async function refresh() {
     try {
       const response = await fetch(endpoint, {cache:'no-store', signal:AbortSignal.timeout(8000)});
       if (!response.ok) throw new Error('Availability unavailable');
       const pages = await response.json();
+      // Validate the entire response before changing any visible state.
+      for (const link of links) {
+        const page = pages?.[link.dataset.page];
+        if (!page || typeof page.label !== 'string' || typeof page.available !== 'boolean' || typeof page.url !== 'string' || !/^https:\/\//.test(page.url)) throw new Error('Invalid navigation settings');
+        new URL(page.url);
+      }
       links.forEach(link => {
         const page = pages[link.dataset.page];
         const title = link.querySelector('.page-label:not(.quadrant__subtitle)');
@@ -44,7 +50,7 @@
         const badge = link.querySelector('.availability-badge');
         if (badge) badge.hidden = true;
       });
-    } catch { links.forEach(link => unavailable(link, link.dataset.page)); }
+    } catch { /* Preserve build-time or last successfully refreshed navigation. */ }
   }
   refresh();
   setInterval(refresh, 60000);

@@ -9,7 +9,7 @@ test('root hostname routing and home redirect preserve paths and queries',async(
   for(const [input,expected] of [
     ['https://about.roadratings.com/','https://about.roadratings.com/about/'],
     ['https://roadratings.com/','https://roadratings.com/'],
-    ['https://preview.workers.dev/about/','https://preview.workers.dev/about/'],
+    ['https://preview.workers.dev/about/','https://preview.workers.dev/about/preview.html'],
     ['https://about.roadratings.com/about/about.css','https://about.roadratings.com/about/about.css']]) {
     let target;
     const response=await worker.fetch(new Request(input),{ASSETS:{fetch:async r=>{target=r.url;return new Response('asset')}}});
@@ -79,4 +79,46 @@ test('CMS labels and subtitles update even when a quadrant is unavailable',async
   }
   const result=await navigation('roadratings.com',{...config,pitch:{...config.pitch,subtitle:''}});
   assert.equal(result.links.find(l=>l.dataset.page==='pitch').subtitle.hidden,true);
+});
+
+const {renderNavigation} = await import('../scripts/render-navigation.cjs').then(m=>m.default);
+test('built HTML contains correct links, labels and badges before JavaScript runs',()=>{
+  for (const file of ['public/index.html','public/about/index.html']) {
+    const html=read(file);
+    for (const [,attrs,key,body] of html.matchAll(/<a\b([^>]*data-page="([^"]+)"[^>]*)>([\s\S]*?)<\/a>/g)) {
+      const page=config[key];
+      assert.equal(/class="[^"]*is-unavailable/.test(attrs),!page.available,key);
+      assert.equal(/ href="/.test(attrs),page.available,key);
+      const badge=body.match(/<span([^>]*availability-badge[^>]*)>/)[1];
+      assert.equal(/\bhidden\b/.test(badge),page.available,key);
+      if(page.available) assert.ok(attrs.includes('href="'+page.url.replaceAll('&','&amp;')+'"'));
+    }
+  }
+  assert.match(read('public/preview-home.html'),/href="\/about\/"/);
+});
+test('renderer handles availability changes, preview overrides and escapes CMS text',()=>{
+  for(const available of [true,false]) {
+    const pages={...config,map:{...config.map,available,previewAvailable:!available,label:'Map & <test>',subtitle:'"<script>"'}};
+    const html=renderNavigation(read('index.html'),pages);
+    const map=html.match(/<a([^>]*data-page="map"[^>]*)>([\s\S]*?)<\/a>/);
+    assert.equal(/ href="/.test(map[1]),available);
+    assert.ok(map[2].includes('Map &amp; &lt;test&gt;'));
+    assert.ok(map[2].includes('&quot;&lt;script&gt;&quot;'));
+    const preview=renderNavigation(read('index.html'),pages,true).match(/<a([^>]*data-page="map"[^>]*)>/)[1];
+    assert.equal(/ href="/.test(preview),!available);
+  }
+  assert.throws(()=>renderNavigation(read('index.html'),{...config,map:{...config.map,url:'javascript:alert(1)'}}));
+});
+test('pending, failed and malformed refreshes preserve the rendered state',async()=>{
+  for(const failure of ['network','invalid']) {
+    const link={dataset:{page:'map'},attrs:{href:config.map.url},setAttribute(k,v){this.attrs[k]=v},removeAttribute(k){delete this.attrs[k]},classList:{add(){throw new Error('Unexpected state change')},remove(){}},querySelector(){return null}};
+    let resolve,reject;
+    const pending=new Promise((a,b)=>{resolve=a;reject=b});
+    vm.runInNewContext(read('shared/navigation.js'),{document:{currentScript:{src:'https://roadratings.com/shared/navigation.js'},querySelectorAll:()=>[link],addEventListener(){}},location:{hostname:'roadratings.com'},URL,AbortSignal,setInterval(){},fetch:()=>pending});
+    assert.deepEqual(link.attrs,{href:config.map.url});
+    if(failure==='network') reject(new Error('offline'));
+    else resolve({ok:true,json:async()=>({})});
+    await new Promise(r=>setImmediate(r));
+    assert.deepEqual(link.attrs,{href:config.map.url});
+  }
 });

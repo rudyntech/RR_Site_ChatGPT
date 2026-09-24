@@ -9,4 +9,11 @@ for (const name of ['index.html','styles.css','_headers','availability.json','ab
   fs.cpSync(path.join(root, name), path.join(output, name), {recursive:true,
     filter: source => !source.endsWith('.md')});
 }
-console.log('Static assets packaged in public/');
+const {renderNavigation} = require('./render-navigation.cjs');
+const pages = JSON.parse(fs.readFileSync(path.join(root, 'availability.json'), 'utf8'));
+for (const [source, preview] of [['index.html','preview-home.html'], ['about/index.html','about/preview.html']]) {
+  const template = fs.readFileSync(path.join(root, source), 'utf8');
+  fs.writeFileSync(path.join(output, source), renderNavigation(template, pages));
+  fs.writeFileSync(path.join(output, preview), renderNavigation(template, pages, true));
+}
+console.log('Static assets packaged with navigation rendered from availability.json.');

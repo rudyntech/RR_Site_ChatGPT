@@ -9,6 +9,10 @@ export default {
     if (url.hostname === 'about.roadratings.com' && url.pathname === '/') {
       url.pathname = '/about/';
     }
+    if (!/(^|\.)roadratings\.com$/.test(url.hostname)) {
+      const previews = {'/':'/preview-home.html', '/index.html':'/preview-home.html', '/about':'/about/preview.html', '/about/':'/about/preview.html', '/about/index.html':'/about/preview.html'};
+      if (previews[url.pathname]) url.pathname = previews[url.pathname];
+    }
     const response = await env.ASSETS.fetch(new Request(url, request));
     const result = new Response(response.body, response);
     // Also apply these explicitly to Worker-served responses.

@@ -32,7 +32,7 @@ You can also send revised copy and photos to Codex and ask it to update the rele
 
 ## Turn pages on or off
 
-Edit availability.json in this repository. Change available to true or false under the page name, then commit. URLs and labels are also stored there. All production RoadRatings pages load the one file at https://about.roadratings.com/availability.json, without a cached fallback; open pages refresh every minute and when returning to the tab. Failed settings requests disable navigation until a successful retry.
+Edit availability.json in this repository. Change available to true or false under the page name, then commit. URLs and labels are also stored there. All production RoadRatings pages load the one file at https://about.roadratings.com/availability.json, without a cached fallback; open pages refresh every minute and when returning to the tab. Failed settings requests preserve the build-time or last successfully refreshed navigation.
 
 Availability is controlled by the current settings in availability.json. About can also be previewed directly at /about/; navigation availability is not access control.
 
@@ -59,3 +59,5 @@ The main header uses the supplied crownmoto wheelie artwork. Summary uses Latigo
 ## Landing quadrant subtext
 
 In Pages CMS, open Page availability and links, expand Map, Data, Pitch or About, and edit Landing quadrant subtext. Navigation label controls the main title. Leave the subtext blank to hide it. Save to main and wait for Cloudflare deployment. Both text fields update even for unavailable destinations.
+
+Navigation is rendered during the asset build from availability.json for Home and About, with separate preview HTML. Run the build before serving public/ locally; source HTML is a template. The refresh script must preserve existing states during pending, failed or invalid requests.
