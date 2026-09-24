@@ -37,6 +37,82 @@ components:
         description: Turn off to show COMING SOON and disable links to this page. This does not take the destination offline.
 
 content:
+  - name: homepage
+    label: Homepage content below quadrants
+    type: file
+    path: home-content.json
+    format: json
+    fields:
+      - name: heading
+        label: Main heading
+        type: string
+        required: true
+      - name: introduction
+        label: Introduction paragraphs
+        type: rich-text
+        options:
+          format: html
+          media: false
+          switcher: false
+        list:
+          min: 1
+      - name: sections
+        label: Content sections
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.heading}'
+        fields:
+          - name: heading
+            label: Section heading
+            type: string
+            required: true
+          - name: paragraphs
+            label: Paragraphs
+            type: rich-text
+            options:
+              format: html
+              media: false
+              switcher: false
+            list:
+              min: 1
+          - name: destination
+            label: Link to a RoadRatings page
+            type: select
+            options:
+              values: [map, data, about, pitch]
+            description: Optional. The label and availability follow Page availability and links.
+  - name: seo
+    label: Search titles and descriptions
+    type: file
+    path: seo.json
+    format: json
+    fields:
+      - name: home
+        label: Home
+        type: object
+        fields:
+          - name: title
+            label: Search title
+            type: string
+            required: true
+          - name: description
+            label: Search description
+            type: text
+            required: true
+      - name: about
+        label: About
+        type: object
+        fields:
+          - name: title
+            label: Search title
+            type: string
+            required: true
+          - name: description
+            label: Search description
+            type: text
+            required: true
   - name: about
     label: About page
     type: file

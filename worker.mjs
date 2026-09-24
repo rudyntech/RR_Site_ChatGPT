@@ -1,10 +1,27 @@
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (url.hostname === 'home.roadratings.com') {
+    const production = /(^|\.)roadratings\.com$/.test(url.hostname);
+    if (url.hostname === 'home.roadratings.com' || url.hostname === 'www.roadratings.com') {
       url.hostname = 'roadratings.com';
       url.protocol = 'https:';
       return Response.redirect(url.href, 308);
+    }
+    const aboutHost = url.hostname === 'about.roadratings.com';
+    if (production && ['/about','/about/','/about/index.html','/about/preview.html'].includes(url.pathname)) {
+      return Response.redirect('https://about.roadratings.com/' + url.search, 308);
+    }
+    if (production && ['/index.html','/preview-home.html'].includes(url.pathname)) {
+      return Response.redirect((aboutHost ? 'https://about.roadratings.com/' : 'https://roadratings.com/') + url.search, 308);
+    }
+    if (url.pathname === '/robots.txt') {
+      const body = 'User-agent: *\nAllow: /\n' + (production ? 'Sitemap: https://' + (aboutHost ? 'about.roadratings.com' : 'roadratings.com') + '/sitemap.xml\n' : '');
+      return new Response(body, {headers:{'Content-Type':'text/plain; charset=utf-8', ...(production ? {} : {'X-Robots-Tag':'noindex, follow'})}});
+    }
+    if (url.pathname === '/sitemap.xml') {
+      const canonical = aboutHost ? 'https://about.roadratings.com/' : 'https://roadratings.com/';
+      const xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + (production ? '<url><loc>' + canonical + '</loc></url>' : '') + '</urlset>';
+      return new Response(xml, {headers:{'Content-Type':'application/xml; charset=utf-8', ...(production ? {} : {'X-Robots-Tag':'noindex, follow'})}});
     }
     if (url.hostname === 'about.roadratings.com' && url.pathname === '/') {
       url.pathname = '/about/';
@@ -15,6 +32,7 @@ export default {
     }
     const response = await env.ASSETS.fetch(new Request(url, request));
     const result = new Response(response.body, response);
+    if (!production) result.headers.set('X-Robots-Tag', 'noindex, follow');
     // Also apply these explicitly to Worker-served responses.
     result.headers.set('X-Content-Type-Options', 'nosniff');
     result.headers.set('Referrer-Policy', 'no-referrer');

@@ -17,3 +17,5 @@ The Map app has a separate GitHub repository/account AND Cloudflare account. Nev
 The user has attached about.roadratings.com and verified its page. About is previewAvailable=true, available=true. Its hostname serves the canonical availability endpoint so the apex Google Sheets stopgap redirect can remain unchanged. Do not attach other domains or change that redirect without launch authorization. See WORKERS-DEPLOYMENT.md for the staged launch.
 
 Navigation is rendered during the asset build from availability.json for Home and About, with separate preview HTML. Run the build before serving public/ locally; source HTML is a template. The refresh script must preserve existing states during pending, failed or invalid requests.
+
+Home text is edited in home-content.json; SEO titles/descriptions in seo.json. Keep these Pages CMS forms in sync. The build renders About using its DOM renderer and sanitizer; browser code only enhances the static photo table. Preserve no-JavaScript readable content. Run pnpm install --frozen-lockfile before builds on a fresh checkout.

@@ -72,6 +72,13 @@
     table.append(rows); container.append(table, dialog);
     return container;
   }
+  // The deployed article already exists in HTML; enhance only its photo table.
+  if (main.dataset.rendered === 'true') {
+    const data = document.getElementById('bike-data');
+    const history = main.querySelector('.bike-history');
+    if (data && history) history.replaceWith(bikeTable(JSON.parse(data.textContent)));
+    return;
+  }
   try {
     const response=await fetch('/about/content.json', {cache:'no-cache'});
     if(!response.ok)throw new Error('Content unavailable');
@@ -115,5 +122,5 @@
       fragment.append(details);
     });
     main.replaceChildren(fragment);
-  } catch {document.getElementById('content-status').textContent='The story could not load. Please refresh the page to try again.';}
+  } catch (error) {if (window.__buildRoadRatings) throw error; document.getElementById('content-status').textContent='The story could not load. Please refresh the page to try again.';}
 })();

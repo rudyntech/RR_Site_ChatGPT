@@ -61,3 +61,11 @@ The main header uses the supplied crownmoto wheelie artwork. Summary uses Latigo
 In Pages CMS, open Page availability and links, expand Map, Data, Pitch or About, and edit Landing quadrant subtext. Navigation label controls the main title. Leave the subtext blank to hide it. Save to main and wait for Cloudflare deployment. Both text fields update even for unavailable destinations.
 
 Navigation is rendered during the asset build from availability.json for Home and About, with separate preview HTML. Run the build before serving public/ locally; source HTML is a template. The refresh script must preserve existing states during pending, failed or invalid requests.
+
+## Homepage and search editing
+
+Use Homepage content below quadrants in Pages CMS to edit the main heading, introduction, and sections (including rich-text formatting and optional destination links). The quadrant grid always fills the first viewport; this content starts below it. Use Search titles and descriptions to edit the Home and About search metadata. About page and Rudy's bikes retain their existing forms. All content is now rendered into HTML during each build.
+
+Canonical URLs, redirects, robots.txt and per-host sitemaps are generated automatically. Development hosts send noindex while permitting crawling so crawlers can read that instruction. After deployment, verify a Domain property for roadratings.com in Google Search Console and Bing Webmaster Tools; submit https://roadratings.com/sitemap.xml and https://about.roadratings.com/sitemap.xml. Verification requires access to those accounts and may require a DNS verification record.
+
+For local work, install dependencies with pnpm install --frozen-lockfile, then run node scripts/build-assets.cjs and serve public/. The build uses a DOM parser to reuse the same formatting sanitizer and About renderer; it is not shipped to visitors.

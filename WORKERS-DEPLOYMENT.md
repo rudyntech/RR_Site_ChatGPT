@@ -4,7 +4,7 @@ This repository owns the landing page and About page. The Map app is in a differ
 
 ## Deploy the preview
 
-Worker name: rr-site-chatgpt. In Cloudflare Workers Builds, use deploy command `npx wrangler deploy` from the repository root. Remove any old `--assets .` override: wrangler.jsonc now declares the Worker entry point and the generated public directory. No separate build command is needed; Wrangler runs the small asset-copy script. It has no package dependencies and does not transform the editable content. The allowlisted public directory excludes Git files, tests, documentation, and historical snapshots.
+Worker name: rr-site-chatgpt. In Cloudflare Workers Builds, use deploy command `npx wrangler deploy` from the repository root. Remove any old `--assets .` override: wrangler.jsonc now declares the Worker entry point and the generated public directory. No separate build command is needed; Wrangler runs the small asset-copy script. Cloudflare must install the pinned build dependency from package.json and pnpm-lock.yaml. The build renders CMS content and navigation into HTML before packaging the public assets. The allowlisted public directory excludes Git files, tests, documentation, and historical snapshots.
 
 No domains or routes are declared in wrangler.jsonc. Deployment does not register domains or change the current Google Sheets stopgap redirect.
 
