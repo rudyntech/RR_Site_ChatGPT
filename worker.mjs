@@ -8,6 +8,11 @@ export default {
       return Response.redirect(url.href, 308);
     }
     const aboutHost = url.hostname === 'about.roadratings.com';
+    // Legal information is always available at one public canonical URL.
+    if (['/privacy','/privacy/','/privacy/index.html'].includes(url.pathname) &&
+        ((production && url.hostname !== 'roadratings.com') || url.pathname !== '/privacy/')) {
+      return Response.redirect((production ? 'https://roadratings.com' : url.origin) + '/privacy/' + url.search, 308);
+    }
     if (production && ['/about','/about/','/about/index.html','/about/preview.html'].includes(url.pathname)) {
       return Response.redirect('https://about.roadratings.com/' + url.search, 308);
     }
@@ -20,7 +25,7 @@ export default {
     }
     if (url.pathname === '/sitemap.xml') {
       const canonical = aboutHost ? 'https://about.roadratings.com/' : 'https://roadratings.com/';
-      const xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + (production ? '<url><loc>' + canonical + '</loc></url>' : '') + '</urlset>';
+      const xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + (production ? '<url><loc>' + canonical + '</loc></url>' + (aboutHost ? '' : '<url><loc>https://roadratings.com/privacy/</loc></url>') : '') + '</urlset>';
       return new Response(xml, {headers:{'Content-Type':'application/xml; charset=utf-8', ...(production ? {} : {'X-Robots-Tag':'noindex, follow'})}});
     }
     if (url.hostname === 'about.roadratings.com' && url.pathname === '/') {

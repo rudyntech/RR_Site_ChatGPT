@@ -219,3 +219,6 @@ a.quadrant:focus-visible {
 .home-story section { margin-top:48px; }
 .home-story .rich-paragraph { margin:0 0 1.2em; }
 .home-story-link { display:inline-flex; align-items:center; gap:12px; color:var(--road-yellow); text-underline-offset:4px; }
+:root .privacy-footer { padding:16px 20px calc(16px + env(safe-area-inset-bottom)); text-align:center; }
+.privacy-footer a { display:inline-block; padding:10px; color:#ffd241; font:13px/1.5 Arial,Helvetica,sans-serif; text-underline-offset:3px; }
+.privacy-footer a:focus-visible { outline:2px solid #ffd241; outline-offset:3px; }

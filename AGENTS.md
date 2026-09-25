@@ -1,5 +1,7 @@
 # RoadRatings project rules
 
+The Privacy Policy is permanent legal information, not an availability-controlled product destination. Keep its footer links and /privacy/ route accessible without JavaScript or authentication. The canonical URL is https://roadratings.com/privacy/; About's relative link redirects there in production and stays on the same host in preview. Source text lives in privacy/index.html.
+
 Rudy's bike table is edited in about/bikes.json via Pages CMS. Bike photos belong in about/bikes (the user explicitly requested this folder), while other About photos remain in assets/about. Store bikes in purchase order; render down columns first. Preserve stock-image attribution and license links until replacing the relevant photo. About paragraphs use CMS HTML rich text; render only allowed formatting through about/rich-text.js, never raw HTML. Keep original user photo bytes and logo intact.
 
 Pages CMS is configured in .pages.yml for about/content.json and availability.json. Keep its schema in sync with those files. Preserve hidden section IDs, collapsed defaults and preview settings on CMS saves. Image uploads belong only in assets/about, outside the original logo. Main-branch CMS saves publish through Cloudflare; do not promise draft previews. The user has confirmed the apex landing page, About and Home/WWW redirects work; the previous apex stopgap has been superseded by launch.

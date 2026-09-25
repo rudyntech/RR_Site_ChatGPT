@@ -92,5 +92,10 @@ main { padding-bottom:calc(32px + env(safe-area-inset-bottom)); }
 .site-footer a:hover { color:#fff0a9; }
 .site-footer a:focus-visible { outline:2px solid var(--yellow); outline-offset:2px; }
 .site-footer svg { width:22px; height:22px; }
+.site-footer { flex-direction:column; gap:0; }
+.footer-social { display:flex; justify-content:center; align-items:center; gap:20px; }
+.site-footer .privacy-link { min-height:28px; font-size:12px; text-decoration:underline; text-underline-offset:3px; }
+html { scroll-padding-bottom:120px; }
+body.about-page main { padding-bottom:calc(60px + env(safe-area-inset-bottom)); }
 .skip-link { position:fixed; z-index:30; }
 @media(max-width:800px) { .site-header { box-shadow:0 0 0 16px #010101; clip-path:inset(0 -16px -3.2px); } }
