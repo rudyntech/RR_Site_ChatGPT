@@ -1,27 +1,35 @@
 {
   "heading": "Discover great motorcycle roads",
   "introduction": [
-    "RoadRatings helps motorcyclists discover and compare riding roads through detailed ratings and firsthand experience. Explore the map, browse the road data, or learn how the project is taking shape."
+    {
+      "text": "RoadRatings helps motorcyclists discover and compare riding roads through detailed ratings and firsthand experience. Explore the map, browse the road data, or learn how the project is taking shape."
+    }
   ],
   "sections": [
     {
       "heading": "Roads worth exploring",
       "paragraphs": [
-        "California is the starting point for a growing collection of paved, twisty roads. The aim is to help riders find roads that suit the experience they want, from scenic outings to more demanding rides."
+        {
+          "text": "California is the starting point for a growing collection of paved, twisty roads. The aim is to help riders find roads that suit the experience they want, from scenic outings to more demanding rides."
+        }
       ],
       "destination": "map"
     },
     {
       "heading": "More than a single score",
       "paragraphs": [
-        "RoadRatings describes roads across multiple rating categories so you can compare their characteristics. Read the story behind the project and the approach to collecting road information."
+        {
+          "text": "RoadRatings describes roads across multiple rating categories so you can compare their characteristics. Read the story behind the project and the approach to collecting road information."
+        }
       ],
       "destination": "about"
     },
     {
       "heading": "Explore the underlying road data",
       "paragraphs": [
-        "Browse the spreadsheet to inspect and compare the collected road information. Recorded ratings describe the road and the riding experience; they are not live reports of traffic, closures, or conditions."
+        {
+          "text": "Browse the spreadsheet to inspect and compare the collected road information. Recorded ratings describe the road and the riding experience; they are not live reports of traffic, closures, or conditions."
+        }
       ],
       "destination": "data"
     }

@@ -49,13 +49,18 @@ content:
         required: true
       - name: introduction
         label: Introduction paragraphs
-        type: rich-text
-        options:
-          format: html
-          media: false
-          switcher: false
+        type: object
         list:
           min: 1
+          collapsible: false
+        fields:
+          - name: text
+            label: Paragraph text
+            type: rich-text
+            options:
+              format: html
+              media: false
+              switcher: false
       - name: sections
         label: Content sections
         type: object
@@ -70,13 +75,18 @@ content:
             required: true
           - name: paragraphs
             label: Paragraphs
-            type: rich-text
-            options:
-              format: html
-              media: false
-              switcher: false
+            type: object
             list:
               min: 1
+              collapsible: false
+            fields:
+              - name: text
+                label: Paragraph text
+                type: rich-text
+                options:
+                  format: html
+                  media: false
+                  switcher: false
           - name: destination
             label: Link to a RoadRatings page
             type: select
@@ -161,14 +171,18 @@ content:
             hidden: true
           - name: paragraphs
             label: Paragraphs
-            type: rich-text
-            description: Select text and use the toolbar for bold, italics, lists and other formatting. Add or reorder items as needed.
-            options:
-              format: html
-              media: false
-              switcher: false
+            type: object
             list:
               min: 1
+              collapsible: false
+            fields:
+              - name: text
+                label: Paragraph text
+                type: rich-text
+                options:
+                  format: html
+                  media: false
+                  switcher: false
           - name: images
             label: Pictures
             type: object

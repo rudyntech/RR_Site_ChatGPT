@@ -2,7 +2,10 @@
 window.renderRoadRatingsText = function (value) {
   const container = document.createElement('div');
   container.className = 'rich-paragraph';
-  const parsed = new DOMParser().parseFromString(String(value), 'text/html');
+  // CMS paragraphs use objects so rich-text edits notify the Save button.
+  // Keep legacy strings readable during migration and in older previews.
+  const text = typeof value === 'string' ? value : value?.text;
+  const parsed = new DOMParser().parseFromString(typeof text === 'string' ? text : '', 'text/html');
   const allowed = new Set(['P','BR','STRONG','B','EM','I','U','S','STRIKE','UL','OL','LI','BLOCKQUOTE','H2','H3','H4','CODE','PRE','HR']);
   const blocked = new Set(['SCRIPT','STYLE','IFRAME','OBJECT','EMBED','SVG','MATH','TEMPLATE']);
   function copy(source, target) {

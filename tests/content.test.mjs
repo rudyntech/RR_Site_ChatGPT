@@ -27,6 +27,16 @@ test('CMS rich text strips executable markup at build time',()=>{
  const el=dom.window.renderRoadRatingsText('<p onclick="alert(1)">Hello <strong>rider</strong><script>alert(1)</script><img src=x onerror=alert(1)></p>');
  assert.equal(el.textContent,'Hello rider');assert(el.querySelector('strong'));assert(!el.querySelector('script,img,[onclick]'));dom.window.close();
 });
+test('CMS paragraph objects retain legacy formatting and sanitize edited text',()=>{
+ const dom=new JSDOM('',{runScripts:'outside-only'});dom.window.eval(read('about/rich-text.js'));
+ const render=dom.window.renderRoadRatingsText;
+ const html='<p>Hello <strong>rider</strong></p><ul><li>Explore</li></ul>';
+ assert.equal(render({text:html}).outerHTML,render(html).outerHTML);
+ const edited=render({text:'<p onclick="bad()">Updated <em>ride</em><script>bad()</script><img src=x onerror="bad()"></p>'});
+ assert.equal(edited.innerHTML,'<p>Updated <em>ride</em></p>');
+ for(const empty of [null,{}, {text:null}, {text:123}]) assert.equal(render(empty).textContent,'');
+ dom.window.close();
+});
 test('Home content and editable search metadata are in initial HTML',()=>{
  const home=JSON.parse(read('home-content.json')),seo=JSON.parse(read('seo.json'));
  for(const [file,key,url] of [['index.html','home','https://roadratings.com/'],['about/index.html','about','https://about.roadratings.com/']]){
