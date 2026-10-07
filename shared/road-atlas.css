@@ -1,0 +1,36 @@
+@import url('/assets/fonts/fonts.css');
+:root { --atlas-heading:'Barlow Semi Condensed', 'Arial Narrow', sans-serif; --atlas-body:'Source Sans 3', Arial, sans-serif; }
+body,body.about-page { font-family:var(--atlas-body); }
+::selection { background:#ffd241; color:#010101; }
+.quadrant__title { font-family:var(--atlas-heading); font-weight:600; font-size:clamp(40px,min(8.6vw,12dvh),96px); line-height:1.05; letter-spacing:0; }
+.quadrant--about .quadrant__title { transform:none; }
+.quadrant__subtitle { font-family:var(--atlas-body); font-size:clamp(15px,1.65vw,21px); font-weight:400; line-height:1.35; letter-spacing:.01em; }
+.quadrant__content { gap:8px; }
+.quadrant__status { font-family:var(--atlas-body); font-size:12px; font-weight:600; letter-spacing:.06em; padding:7px 12px; border-radius:2px; }
+.home-story { max-width:760px; font-family:var(--atlas-body); font-size:19px; line-height:1.7; }
+.home-story h1,.home-story h2 { font-family:var(--atlas-heading); font-weight:600; letter-spacing:0; }
+.home-story h1 { font-size:clamp(32px,4vw,44px); }
+.home-story h2 { font-size:30px; }
+.privacy-footer a { font-family:var(--atlas-body); font-size:14px; }
+.site-header h1 { font-family:var(--atlas-heading); font-weight:600; font-size:clamp(34px,4vw,48px); letter-spacing:0; }
+.site-nav .nav-link { font-family:var(--atlas-body); font-size:18px; font-weight:500; min-height:44px; justify-content:center; }
+.about-page main { max-width:1120px; }
+.about-hero { max-width:630px; margin:24px auto; }
+.about-hero img { max-height:420px; object-fit:contain; }
+.site-nav .availability-badge { font-size:11px; }
+.about-page summary h2 { font-family:var(--atlas-heading); font-weight:600; font-size:clamp(28px,3vw,36px); letter-spacing:0; }
+.about-page summary .number { font-family:var(--atlas-body); font-weight:400; font-size:16px; color:#bdb6a1; }
+.about-page .summary-copy,.about-page .copy { max-width:68ch; font-size:19px; line-height:1.7; }
+.about-page .rich-paragraph { margin-bottom:1.25em; }
+.about-page figcaption { font-family:var(--atlas-body); font-size:14px; line-height:1.5; }
+.about-page .site-footer a { font-family:var(--atlas-body); }
+.about-page .bike-table { font-size:17px; line-height:1.5; }
+.about-page .bike-table caption { font-family:var(--atlas-heading); font-size:24px; font-weight:600; }
+@media(max-width:600px) {
+ .quadrant__content { gap:6px; }
+ .quadrant__subtitle { font-size:15px; }
+ .quadrant__status { font-size:11px; padding:6px 9px; }
+ .about-page .summary-copy,.about-page .copy { font-size:18px; }
+ .about-hero { margin:24px auto; }
+ .about-page .bike-table { font-size:14px; }
+}
